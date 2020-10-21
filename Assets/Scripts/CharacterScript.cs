@@ -42,9 +42,9 @@ public class CharacterScript : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         Debug.Log("Moral level" + LevelOfMoral);
-        Debug.Log("Actualization level" + LevelOfMoral);
-        Debug.Log("Loyalty level" + LevelOfMoral);
-        Debug.Log("Integrity level" + LevelOfMoral);
+        Debug.Log("Actualization level" + LevelOfActualization);
+        Debug.Log("Loyalty level" + LevelOfLoyalty);
+        Debug.Log("Integrity level" + LevelOfIntegrity);
         StopCoroutine(initvars);
     }
     int GetRandom(int min, int max)
