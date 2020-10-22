@@ -13,6 +13,7 @@ public class CharacterManager : MonoBehaviour
     private IEnumerator addnewcharacter;
     int randCharValue;
     public GameObject charPrefab;
+    public int characterHeight = 1;
 
     void Start()
     {
@@ -54,7 +55,7 @@ public class CharacterManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         //Add a new character
-        Instantiate(charPrefab, new Vector3(0, 0, -1), Quaternion.identity);
+        Instantiate(charPrefab, new Vector3(0, characterHeight, -1), Quaternion.identity);
         StopCoroutine(addnewcharacter);
     }
 }
