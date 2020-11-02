@@ -15,6 +15,7 @@ public class CharacterManager : MonoBehaviour
     public GameObject charPrefab;
     public int characterHeight = 1;
 
+
     void Start()
     {
         thrust = new Vector2(40, 0);
@@ -36,6 +37,7 @@ public class CharacterManager : MonoBehaviour
         StartCoroutine(killcoroutine);
         StartCoroutine(addnewcharacter);
     }
+
     public void SwipeCharacterLeft()
     {
         Debug.Log("Player has chosen to send character to Reincarnate.");
@@ -51,6 +53,7 @@ public class CharacterManager : MonoBehaviour
         Destroy(character);
         StopCoroutine(killcoroutine);
     }
+
     private IEnumerator AddNewChar(int CharacterIndex, float waitTime)
     {
         yield return new WaitForSeconds(waitTime);

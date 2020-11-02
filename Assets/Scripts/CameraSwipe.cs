@@ -74,12 +74,12 @@ public class CameraSwipe : MonoBehaviour
     void MoveCamUp()
     {
         Debug.Log("Moving Up");
-        camTransf.position = Vector3.Lerp(camTransf.position, topofProfile.position, fractionOfcamJourneyUp);
+        camTransf.position = Vector3.Lerp(camTransf.position, topofProfile.position, camSpeed);//change camSpeed to fractionOfcamJourneyUp in order to mimick swipe controls.  
     }
     void MoveCamDown()
     {
         Debug.Log("Moving Down");
-        camTransf.position = Vector3.Lerp(camTransf.position, bottomofProfile.position, fractionOfcamJourneyDown);
+        camTransf.position = Vector3.Lerp(camTransf.position, bottomofProfile.position, camSpeed);//change camSpeed to fractionOfcamJourneyDown in order to mimick swipe controls.
     }
     void ReturnCamMiddle()
     {

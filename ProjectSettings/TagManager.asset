@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Manager
   - Character
+  - tag1
+  - tag2
+  - tag
   layers:
   - Default
   - TransparentFX
