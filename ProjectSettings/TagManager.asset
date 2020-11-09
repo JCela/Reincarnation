@@ -9,6 +9,7 @@ TagManager:
   - tag1
   - tag2
   - tag
+  - Overlay
   layers:
   - Default
   - TransparentFX

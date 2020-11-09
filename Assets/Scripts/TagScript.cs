@@ -10,6 +10,8 @@ public class TagScript : MonoBehaviour
 
     private CharacterScript charscript;
     private GameObject character;
+    private GameObject overlay;
+    private GameObject chatSpawn;
 
     public int moral;
     public int actualization;
@@ -22,25 +24,28 @@ public class TagScript : MonoBehaviour
     public GameObject tagText;
     public TextMeshPro tag;
 
+    public GameObject chatPrefab;
+
     private int lastNumber = 0;
 
     void Start()
     {
         inittags = SetTagValues();
         StartCoroutine(inittags);
+        random = GetRandom(0, 4);
+        randomText = GetRandom(0, 9);
+        overlay = GameObject.FindWithTag("Overlay");
+        chatSpawn = overlay.transform.GetChild(0).gameObject;
     }
 
     void Update()
     {
+
         character = GameObject.FindWithTag("Character");
         charscript = character.GetComponent<CharacterScript>();
  
         tagText = this.transform.GetChild(0).gameObject;
         tag = tagText.GetComponent<TextMeshPro>();
-        random = GetRandom(0, 4);
-        randomText = GetRandom(0, 9);
-
-
     }
 
     private IEnumerator SetTagValues()
@@ -58,7 +63,7 @@ public class TagScript : MonoBehaviour
 
     private void WriteTags()
     {
-        if (random == 1)
+        if (random == 0)
         {
             if (moral >= 5)
             {
@@ -136,7 +141,8 @@ public class TagScript : MonoBehaviour
                 }
 
             }
-        }else if(random == 3)
+        }
+        else if(random == 1)
         {
             if (actualization >= 5)
             {
@@ -210,7 +216,8 @@ public class TagScript : MonoBehaviour
                         break;
                 }
             }
-        }else if(random == 0)
+        }
+        else if(random == 2)
         {
             if (loyalty >= 5)
             {
@@ -284,7 +291,8 @@ public class TagScript : MonoBehaviour
                         break;
                 }
             }
-        }else if(random == 2)
+        }
+        else if(random == 3)
         {
             if(integrity >= 5)
             {
@@ -371,4 +379,11 @@ public class TagScript : MonoBehaviour
         return rand;
     }
 
+    public void OnMouseDown()
+    {
+        GameObject bubble = (GameObject)Instantiate(chatPrefab, chatSpawn.transform.position, transform.rotation);
+        bubble.transform.parent = overlay.transform;
+        ChatScript cs = bubble.GetComponent<ChatScript>();
+        cs.WriteBubble(random, randomText, moral, integrity, loyalty, actualization);
+    }
 }
