@@ -8,14 +8,34 @@ public class ChatScript : MonoBehaviour
     private GameObject chatTextObject;
     public Text chatText;
     private IEnumerator waitabitandkill;
+    public IEnumerator waitandspawnself;
+    public IEnumerator waitandspawnsubject;
     public Rigidbody2D rb;
     private Vector2 thrust;
-    
+    public int m;
+    public int i;
+    public int l;
+    public int a;
+    public int chatInd;
+    public int x;
+    public int y;
+
+    public GameObject chatPrefab;
+    public GameObject selfPrefab;
+    private GameObject chatSpawn;
+    private GameObject selfSpawn;
+    private GameObject overlay;
+
     void Awake()
     {
         waitabitandkill = WaitSeconds(4.0f);
         StartCoroutine(waitabitandkill);
+        waitandspawnself = NewSelfCo(3.3f);
+        waitandspawnsubject = NewSubjectCo(3.3f);
         thrust = new Vector2(0, 40);
+        overlay = GameObject.FindWithTag("Overlay");
+        chatSpawn = overlay.transform.GetChild(0).gameObject;
+        selfSpawn = overlay.transform.GetChild(1).gameObject;
     }
 
     void Update()
@@ -23,8 +43,15 @@ public class ChatScript : MonoBehaviour
         chatTextObject = this.transform.GetChild(1).gameObject;
     }
 
-    public void WriteBubble(int random, int randomText, int moral, int integrity, int loyalty, int actualization)
+    public void WriteBubble(int random, int randomText, int moral, int integrity, int loyalty, int actualization, int chatIndex)
     {
+        m = moral;
+        i = integrity;
+        l = loyalty;
+        a = actualization;
+        x = random;
+        y = randomText;
+        chatInd = chatIndex;
         if (random == 0) // moral
         {
             if (moral >= 5)
@@ -32,8 +59,28 @@ public class ChatScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        //Set bubbles text to Altruist
-                        chatText.text = "Yes indeed I am an altruist person";
+                        //Start Alruist convo
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "I would consider myself atruistic yes.";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Okay, what makes you say that.";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Well I'm tagged that aren't I?";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "True...";
+
+                                break;
+                        }
                         break;
                     case 1:
                         //Generous
@@ -128,43 +175,227 @@ public class ChatScript : MonoBehaviour
                 {
                     case 0:
                         //Traveler
-                        chatText.text = "I have seen the world!";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "I've been all around the world!";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Thats so great!  Where's your favorite place?";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Orlando!";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 1:
                         //Ceo
-                        chatText.text = "I own many businesses";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "I'm the new boss here";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Nah im pretty sure *Boss name here* is the boss";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Oh okay, not sure who that is but I guess I gotta respect authority.";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 2:
                         //Author
-                        chatText.text = "You should read some of my books on the radical left!";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "You should read my books on the economy";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "I bought a stock one time.";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Nice man.";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "The company went bankrupt :(";
+                                break;
+                        }
                         break;
                     case 3:
                         //Married
-                        chatText.text = "Thank god thats over.";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "Hey there ;)";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Aren't you married?";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Yeah but what does that matter";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 4:
                         //Parent
-                        chatText.text = "I love my children more than life itself.";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "I love my children more than life itself.";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Aw thats sweet, what are their names?";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Donald";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 5:
                         //Educated
-                        chatText.text = "I am an alumni of Princeton University";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "I feel like im educated";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Nah ur supa dum, your just like ya motha";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "I need to cut you off.";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 6:
                         //Graduate
-                        chatText.text = "I have my PhD";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "I feel like im educated";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Yeah I would say so.";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Highschool was so easy.";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "Oh okay";
+
+                                break;
+                        }
                         break;
                     case 7:
                         //Executive
-                        chatText.text = "i'll have to pencil you in for a meeting";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "I guess my stockholders wouldn't mind my passing would they?";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Yeah I would say so.";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Aw shit.  Well hows the Nasdaq doing?";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "It crashed.";
+
+                                break;
+                        }
                         break;
                     case 8:
                         //Retired
-                        chatText.text = "I guess you could say this is the ultimate retirement!";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "I can't wait to see my partner again.";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "You will one day, I promise";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Thank you, I appreciate that. ";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "No problem :)";
+
+                                break;
+                        }
                         break;
                     case 9:
                         //Profitable
-                        chatText.text = "Got any money?";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "Now how can we monetize this?";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "In game purchases!";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "I like the way you are thinking";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "That was a joke.";
+
+                                break;
+                        }
                         break;
                 }
             }
@@ -174,43 +405,225 @@ public class ChatScript : MonoBehaviour
                 {
                     case 0:
                         //Couch potato
-                        chatText.text = "Just one more episode!";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "Hey is there a place to sit around here?";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "You can sit in my seat if you want";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "No thats too much effort I would have to move more.";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 1:
                         //Cheater
-                        chatText.text = "You don't understand what it means to win!";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "This is dumb, how am I supposed to win?";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "This isn't about winning or losing...";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Then what is it about?";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 2:
                         //Single
-                        chatText.text = "I don't need anyone else, I am an independant being.";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "i'm so lonely its crippling";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "You never found the one you loved?";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "I did, but I hope to be with her again soon.";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 3:
                         //Uneducated
-                        chatText.text = "Edumawha?";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "Edumawa?";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Sorry, I didn't mean for that to sound the wrong way...";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "I love Quiz night";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 4:
                         //Hacker
-                        chatText.text = "I would change your password if I were you.";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "You better change your password";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "What is that supposed to mean";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "You know exactly what is means.";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 5:
                         //Stoner
-                        chatText.text = "Got a lighter?";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "You got a lighter friend?";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "We aren't allowed to smoke in here are we?  Not that I have one.";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Its all good.";
+                                //StartCoroutine(waitandspawnself);
+
+                                break;
+                        }
                         break;
                     case 6:
                         //Scammer
-                        chatText.text = "Hi!  This is Ernie from Ernie's furniture!  We are trying to reach you for a delivery but still need your social security number!";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "Im gonna need ur credit card number";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "YWhat why?";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Ascent Fee";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "Who said i was ascending you?";
+
+                                break;
+                        }
                         break;
                     case 7:
                         //Lonely
-                        chatText.text = "Get away from me!";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "I hate everyone!";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "What did I do?";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "You didn't do anything... but its just everyone else!";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "You seem hurt";
+
+                                break;
+                        }
                         break;
                     case 8:
                         //Confused
-                        chatText.text = "I don't even know whats happening.  Who are you?";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "What is going on?";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "I'm just as confused as you bro";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Where's mom?";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "Well damn I don't know what to say.";
+
+                                break;
+                        }
                         break;
                     case 9:
                         //Lost
-                        chatText.text = "Where am i?";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "Do you know where the Statue of Liberty is?";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Its no where near here.";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "Can you take a picture of me with the Statue of Liberty?";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "Gonna be hard.";
+
+                                break;
+                        }
                         break;
                 }
             }
@@ -283,6 +696,7 @@ public class ChatScript : MonoBehaviour
                     case 3:
                         //Thief
                         chatText.text = "Corporate America doesn't deserve my money.";
+
                     break;
                     case 4:
                         //Cheater
@@ -316,8 +730,6 @@ public class ChatScript : MonoBehaviour
         {
             if (integrity >= 5)
             {
-
-
                 switch (randomText)
                 {
                     case 0:
@@ -353,8 +765,26 @@ public class ChatScript : MonoBehaviour
                         chatText.text = "I will never change!";
                         break;
                     case 8:
-                        //Revolutionary
-                        chatText.text = "Death to the oppressor!!";
+                        //Revolutionary option 1
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "Death to the oppressor!";
+                                StartCoroutine(waitandspawnself);
+                               
+                                break;
+                            case 1:
+                                chatText.text = "What is that supposed to mean?";
+                                StartCoroutine(waitandspawnsubject);
+                                
+                                break;
+                            case 2:
+                                chatText.text = "I don't know I saw a reddit post.";
+                                //StartCoroutine(waitandspawnself);
+                               
+                                break;
+                        }
+                        //Revolutionary option 2
                         break;
                     case 9:
                         //FPrideful
@@ -420,9 +850,45 @@ public class ChatScript : MonoBehaviour
         StopCoroutine(waitabitandkill);
     }
 
+    public IEnumerator NewSubjectCo(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        chatInd++;
+        NewSubjectBubble();
+        StopCoroutine(waitandspawnsubject);
+    }
+
+    public IEnumerator NewSelfCo(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        chatInd++;
+        NewSelfBubble();
+        StopCoroutine(waitandspawnself);
+    }
+
     public void PushUp()
     {
         rb.AddForce(thrust, ForceMode2D.Impulse);
+    }
+
+    public void NewSubjectBubble()
+    {
+ 
+        GameObject subjectbubble = (GameObject)Instantiate(chatPrefab, chatSpawn.transform.position, transform.rotation);
+        subjectbubble.transform.parent = overlay.transform;
+        subjectbubble.transform.localScale = new Vector3(0.1f, 0.06f, 1);
+        ChatScript cs = subjectbubble.GetComponent<ChatScript>();
+        cs.WriteBubble(x, y, m, i, l, a, chatInd);
+    }
+
+    public void NewSelfBubble()
+    {
+     
+        GameObject selfbubble = (GameObject)Instantiate(selfPrefab, selfSpawn.transform.position, transform.rotation);
+        selfbubble.transform.parent = overlay.transform;
+        selfbubble.transform.localScale = new Vector3(0.1f, 0.06f, 1);
+        ChatScript cs = selfbubble.GetComponent<ChatScript>();
+        cs.WriteBubble(x, y, m, i, l, a, chatInd);
     }
 }
 

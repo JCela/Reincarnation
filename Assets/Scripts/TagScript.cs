@@ -161,7 +161,7 @@ public class TagScript : MonoBehaviour
                         tag.SetText("Married");
                         break;
                     case 4:
-                        tag.SetText("Parent");
+                        tag.SetText("Single Parent");
                         break;
                     case 5:
                         tag.SetText("Educated");
@@ -384,6 +384,6 @@ public class TagScript : MonoBehaviour
         GameObject bubble = (GameObject)Instantiate(chatPrefab, chatSpawn.transform.position, transform.rotation);
         bubble.transform.parent = overlay.transform;
         ChatScript cs = bubble.GetComponent<ChatScript>();
-        cs.WriteBubble(random, randomText, moral, integrity, loyalty, actualization);
+        cs.WriteBubble(random, randomText, moral, integrity, loyalty, actualization, 0);
     }
 }
