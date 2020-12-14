@@ -33,7 +33,7 @@ public class CharacterManager : MonoBehaviour
     public void SwipeCharacterRight()
     {
         Debug.Log("Player has chosen to send character to Ascend.");
-        rb.AddForce(thrust, ForceMode2D.Impulse);
+        //rb.AddForce(thrust, ForceMode2D.Impulse);
         StartCoroutine(killcoroutine);
         StartCoroutine(addnewcharacter);
     }
@@ -41,7 +41,7 @@ public class CharacterManager : MonoBehaviour
     public void SwipeCharacterLeft()
     {
         Debug.Log("Player has chosen to send character to Reincarnate.");
-        rb.AddForce(-thrust, ForceMode2D.Impulse);
+        //rb.AddForce(-thrust, ForceMode2D.Impulse);
         StartCoroutine(killcoroutine);
         StartCoroutine(addnewcharacter);
     }
@@ -58,7 +58,8 @@ public class CharacterManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         //Add a new character
-        Instantiate(charPrefab, new Vector3(0, characterHeight, -1), Quaternion.identity);
+        Instantiate(charPrefab, new Vector3(-1, characterHeight, -1), Quaternion.identity);
         StopCoroutine(addnewcharacter);
     }
+
 }

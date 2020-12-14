@@ -46,16 +46,16 @@ public class CameraSwipe : MonoBehaviour
     {
         if (y == 1)
         {
-            MoveCamUp();
+            //MoveCamUp();
         }
         else if (y == -1)
         {
-            MoveCamDown();
+            //MoveCamDown();
             
         }
         else if (y == 0 && x == 0)
         {
-            ReturnCamMiddle();
+            //ReturnCamMiddle();
             
         }
 

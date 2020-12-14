@@ -14,16 +14,16 @@ public class CharacterScript : MonoBehaviour
     public int LevelOfIntegrity;
     
 
-    public Sprite[] characterSprite;
+    //public Sprite[] characterSprite;
 
     private int lastNumber = 0;
 
     void Start()
     {
-        int spriteRandomizer = Random.Range(1, 10);
+        //int spriteRandomizer = Random.Range(1, 10);
         initvars = SetCharVariables();
         StartCoroutine(initvars);
-        this.GetComponent<SpriteRenderer>().sprite = characterSprite[spriteRandomizer];
+        //this.GetComponent<SpriteRenderer>().sprite = characterSprite[spriteRandomizer];
         
         
     }

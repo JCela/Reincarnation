@@ -177,7 +177,7 @@ RectTransform:
   m_GameObject: {fileID: 8167716979459598019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 1.1236}
+  m_LocalScale: {x: 1, y: 1, z: 0.5862046}
   m_Children:
   - {fileID: 8939757290280395784}
   - {fileID: 6244135309726650799}
@@ -186,7 +186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 145.5, y: 260.5}
+  m_AnchoredPosition: {x: 143.35, y: 259.93}
   m_SizeDelta: {x: 509.2, y: 85.148346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970996610470933743
@@ -210,7 +210,8 @@ MonoBehaviour:
   chatInd: 0
   x: 0
   y: 0
-  chatPrefab: {fileID: 8167716979459598019}
+  chatPrefab: {fileID: 5642006252658177974, guid: efa14207ff3b1fa40adb5656853e8961,
+    type: 3}
   selfPrefab: {fileID: 8167716979459598019}
 --- !u!61 &2394259724140357554
 BoxCollider2D:
