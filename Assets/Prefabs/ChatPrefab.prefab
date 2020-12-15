@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 5642006251574029897}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.4125, z: 1}
   m_Children: []
   m_Father: {fileID: 5642006252658177973}
   m_RootOrder: 0
@@ -108,8 +108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.2495, y: 0.86671}
-  m_SizeDelta: {x: 509.2, y: 85.148346}
+  m_AnchoredPosition: {x: 14.6, y: -16.1}
+  m_SizeDelta: {x: 584.7282, y: 153.12372}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &854974089603472792
 MonoBehaviour:
@@ -216,8 +216,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -10.7, y: -4.4}
-  m_SizeDelta: {x: 2525.6367, y: 472.48727}
+  m_AnchoredPosition: {x: -9, y: -7}
+  m_SizeDelta: {x: 2543.5703, y: 715.4774}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5642006253408851553
 CanvasRenderer:
@@ -259,4 +259,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hello this is a test
+  m_Text: FILLER

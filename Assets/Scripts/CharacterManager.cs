@@ -11,7 +11,6 @@ public class CharacterManager : MonoBehaviour
 
     private IEnumerator killcoroutine;
     private IEnumerator addnewcharacter;
-    int randCharValue;
     public GameObject charPrefab;
     public int characterHeight = 1;
 
@@ -25,7 +24,7 @@ public class CharacterManager : MonoBehaviour
     void Update()
     {
         killcoroutine = PushAndKill(1.0f);
-        addnewcharacter = AddNewChar(randCharValue, 1.0f);
+        addnewcharacter = AddNewChar(1.0f);
         character = GameObject.FindWithTag("Character");
         rb = character.GetComponent<Rigidbody2D>();
     }
@@ -54,7 +53,7 @@ public class CharacterManager : MonoBehaviour
         StopCoroutine(killcoroutine);
     }
 
-    private IEnumerator AddNewChar(int CharacterIndex, float waitTime)
+    private IEnumerator AddNewChar(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         //Add a new character

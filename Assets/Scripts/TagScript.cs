@@ -22,7 +22,7 @@ public class TagScript : MonoBehaviour
     public int randomText;
 
     public GameObject tagText;
-    public TextMeshPro tag;
+    private TextMeshPro tag;
 
     public GameObject chatPrefab;
 
@@ -55,7 +55,7 @@ public class TagScript : MonoBehaviour
         actualization = charscript.LevelOfActualization;
         loyalty = charscript.LevelOfLoyalty;
         integrity = charscript.LevelOfIntegrity;
-        Debug.Log("This is a debug test" + moral);
+        //Debug.Log("This is a debug test" + moral);
 
         WriteTags(); //take values and start writing
         StopCoroutine(inittags);    //stop setting values coroutine

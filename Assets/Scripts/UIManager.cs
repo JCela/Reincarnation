@@ -7,13 +7,15 @@ public class UIManager : MonoBehaviour
 {
     public Text Ascended;
     public Text Reincarnated;
-    float totalAscended = 0;
-    float totalReincarnated = 0;
+    public Text Grade;
+    float totalAscended;
+    float totalReincarnated;
 
     void Update()
     {
         Ascended.text = "" + totalAscended.ToString();
         Reincarnated.text = "" + totalReincarnated.ToString();
+        
     }
 
     public void AddToAscended()

@@ -20,11 +20,14 @@ public class CameraSwipe : MonoBehaviour
     public GameObject Manager;
     private UIManager uiManagerScript;
     private CharacterManager charScript;
+    private ScoreManager score;
 
     void Start()
     {
         uiManagerScript = Manager.GetComponent<UIManager>();
         charScript = Manager.GetComponent<CharacterManager>();
+        score = Manager.GetComponent<ScoreManager>();
+
 
         camJourneyUp = Vector3.Distance(camTransf.position, topofProfile.position);
         camJourneyDown = Vector3.Distance(camTransf.position, bottomofProfile.position);
@@ -90,10 +93,12 @@ public class CameraSwipe : MonoBehaviour
     {
         uiManagerScript.AddToAscended();
         charScript.SwipeCharacterRight();
+        score.AddA();
     }
     void ChoseReincarnate()
     {
         uiManagerScript.AddToReincarnated();
         charScript.SwipeCharacterLeft();
+        score.AddB();
     }
 }
