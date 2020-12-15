@@ -21,12 +21,16 @@ public class TagScript : MonoBehaviour
     public int random;
     public int randomText;
 
+
     public GameObject tagText;
     private TextMeshPro tag;
 
     public GameObject chatPrefab;
 
     private int lastNumber = 0;
+    private int chatClicks = 0;
+    public int clickableLimit = 2;
+    
 
     void Start()
     {
@@ -381,9 +385,15 @@ public class TagScript : MonoBehaviour
 
     public void OnMouseDown()
     {
-        GameObject bubble = (GameObject)Instantiate(chatPrefab, chatSpawn.transform.position, transform.rotation);
-        bubble.transform.parent = overlay.transform;
-        ChatScript cs = bubble.GetComponent<ChatScript>();
-        cs.WriteBubble(random, randomText, moral, integrity, loyalty, actualization, 0);
+        if (chatClicks < 1 && charscript.charClicks < clickableLimit)
+        {
+            GameObject bubble = (GameObject)Instantiate(chatPrefab, chatSpawn.transform.position, transform.rotation);
+            bubble.transform.parent = overlay.transform;
+            ChatScript cs = bubble.GetComponent<ChatScript>();
+            cs.WriteBubble(random, randomText, moral, integrity, loyalty, actualization, 0);
+            chatClicks++;
+            charscript.charClicks++;
+
+        }
     }
 }

@@ -11,6 +11,7 @@ public class CameraSwipe : MonoBehaviour
     public Transform bottomofProfile;
     public Transform centerofProfile;
     public float camSpeed = 1.0f;
+    private int timer = 0;
 
     //Float Declaration
     private float camJourneyUp;
@@ -34,6 +35,8 @@ public class CameraSwipe : MonoBehaviour
 
     }
     void Update(){
+        timer++;
+
         //Input variables, and calling checkinput with said variables
         float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");
@@ -62,15 +65,16 @@ public class CameraSwipe : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && timer >200)
         {
             ChoseAscend();
+            timer = 0;
 
         }
-        else if (Input.GetKeyDown("delete"))
+        else if (Input.GetKeyDown("delete") && timer > 200)
         {
             ChoseReincarnate();
-
+            timer = 0;
         }
     }
 

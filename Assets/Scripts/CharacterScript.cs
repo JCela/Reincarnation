@@ -17,6 +17,7 @@ public class CharacterScript : MonoBehaviour
     //public Sprite[] characterSprite;
 
     private int lastNumber = 0;
+    public int charClicks = 0;
 
     void Start()
     {
