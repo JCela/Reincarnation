@@ -102,7 +102,7 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    public void AddA()
+    public void AddA()//Ascended
     {
         currentRound++;
         if(totalValue >= 20)
@@ -113,7 +113,7 @@ public class ScoreManager : MonoBehaviour
         
     }
 
-    public void AddB()
+    public void AddB()//Descended
     {
         currentRound++;
         if (totalValue <= 20)

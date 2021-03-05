@@ -8,6 +8,8 @@ public class CharacterManager : MonoBehaviour
     private GameObject character;
     private Rigidbody2D rb;
     private Vector2 thrust;
+    public Tasks taskScript;
+    
 
     private IEnumerator killcoroutine;
     private IEnumerator addnewcharacter;
@@ -19,6 +21,7 @@ public class CharacterManager : MonoBehaviour
     {
         thrust = new Vector2(40, 0);
         uiManagerScript = this.GetComponent<UIManager>();
+       
     }
      
     void Update()
@@ -32,6 +35,7 @@ public class CharacterManager : MonoBehaviour
     public void SwipeCharacterRight()
     {
         Debug.Log("Player has chosen to send character to Ascend.");
+        taskScript.Ascended++;
         //rb.AddForce(thrust, ForceMode2D.Impulse);
         StartCoroutine(killcoroutine);
         StartCoroutine(addnewcharacter);
@@ -40,6 +44,7 @@ public class CharacterManager : MonoBehaviour
     public void SwipeCharacterLeft()
     {
         Debug.Log("Player has chosen to send character to Reincarnate.");
+        taskScript.Descended++;
         //rb.AddForce(-thrust, ForceMode2D.Impulse);
         StartCoroutine(killcoroutine);
         StartCoroutine(addnewcharacter);

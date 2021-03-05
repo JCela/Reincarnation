@@ -69,13 +69,14 @@ public class TagScript : MonoBehaviour
     {
         if (random == 0)
         {
-            if (moral >= 5)
+            if (moral >= 5)//Positive
             {
                 //Choose random moral tag
                 switch (randomText)
                 {
                     case 0:
                         tag.SetText("Altruist");
+
                         break;
                     case 1:
                         tag.SetText("Generous");
