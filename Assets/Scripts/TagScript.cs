@@ -21,7 +21,7 @@ public class TagScript : MonoBehaviour
     public int random;
     public int randomText;
 
-
+    public int currentPoints;
     public GameObject tagText;
     private TextMeshPro tag;
 
@@ -40,6 +40,7 @@ public class TagScript : MonoBehaviour
         randomText = GetRandom(0, 9);
         overlay = GameObject.FindWithTag("Overlay");
         chatSpawn = overlay.transform.GetChild(0).gameObject;
+        currentPoints = 0;
     }
 
     void Update()
@@ -71,15 +72,17 @@ public class TagScript : MonoBehaviour
         {
             if (moral >= 5)//Positive
             {
+                Addpoint(5);
                 //Choose random moral tag
                 switch (randomText)
                 {
                     case 0:
                         tag.SetText("Altruist");
-
+                        
                         break;
                     case 1:
                         tag.SetText("Generous");
+                        
                         break;
                     case 2:
                         tag.SetText("Foster Parent");
@@ -110,6 +113,7 @@ public class TagScript : MonoBehaviour
             }
             else
             {
+                Losepoint(5);
                 //Choose a random immoral tag
                 switch (randomText)
                 {
@@ -151,6 +155,7 @@ public class TagScript : MonoBehaviour
         {
             if (actualization >= 5)
             {
+                Addpoint(5);
                 switch (randomText)
                 {
                     case 0:
@@ -187,6 +192,7 @@ public class TagScript : MonoBehaviour
             }
             else
             {
+                Losepoint(5);
                 switch (randomText)
                 {
                     case 0:
@@ -226,6 +232,7 @@ public class TagScript : MonoBehaviour
         {
             if (loyalty >= 5)
             {
+                Addpoint(5);
                 switch (randomText)
                 {
                     case 0:
@@ -262,6 +269,7 @@ public class TagScript : MonoBehaviour
             }
             else
             {
+                Losepoint(5);
                 switch (randomText)
                 {
                     case 0:
@@ -301,6 +309,7 @@ public class TagScript : MonoBehaviour
         {
             if(integrity >= 5)
             {
+                Addpoint(5);
                 switch (randomText)
                 {
                     case 0:
@@ -337,6 +346,7 @@ public class TagScript : MonoBehaviour
             }
             else
             {
+                Losepoint(5);
                 switch (randomText)
                 {
                     case 0:
@@ -384,6 +394,15 @@ public class TagScript : MonoBehaviour
         return rand;
     }
 
+    public void Addpoint(int amount)
+    {
+        currentPoints += amount;
+    }
+
+    public void Losepoint(int amount)
+    {
+        currentPoints -= amount;
+    }
     public void OnMouseDown()
     {
         if (chatClicks < 1 && charscript.charClicks < clickableLimit)

@@ -16,12 +16,28 @@ public class CharacterManager : MonoBehaviour
     public GameObject charPrefab;
     public int characterHeight = 1;
 
+    private GameObject tag1;
+    private GameObject tag2;
+    private GameObject tag3;
+    public int soulPoints;
+
+    private TagScript tag1script;
+    private TagScript tag2script;
+    private TagScript tag3script;
+
 
     void Start()
     {
         thrust = new Vector2(40, 0);
+        character = GameObject.FindWithTag("Character");
         uiManagerScript = this.GetComponent<UIManager>();
-       
+        tag1 = character.transform.GetChild(0).gameObject;
+        tag2 = character.transform.GetChild(1).gameObject;
+        tag3 = character.transform.GetChild(2).gameObject;
+
+        tag1script = tag1.GetComponent<TagScript>();
+        tag2script = tag2.GetComponent<TagScript>();
+        tag3script = tag3.GetComponent<TagScript>();
     }
      
     void Update()
@@ -30,6 +46,9 @@ public class CharacterManager : MonoBehaviour
         addnewcharacter = AddNewChar(1.0f);
         character = GameObject.FindWithTag("Character");
         rb = character.GetComponent<Rigidbody2D>();
+
+        soulPoints = tag1script.currentPoints + tag2script.currentPoints + tag3script.currentPoints;
+        Debug.Log("This souls value in points is: " + soulPoints);
     }
 
     public void SwipeCharacterRight()
