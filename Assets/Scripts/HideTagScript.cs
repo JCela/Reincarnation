@@ -18,6 +18,7 @@ public class HideTagScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         character = GameObject.FindWithTag("Character");
         profile[0] = character.transform.GetChild(0).gameObject;
         profile[1] = character.transform.GetChild(1).gameObject;
