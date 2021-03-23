@@ -394,7 +394,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8333736125097513092, guid: e704a5a0b6c00b8479d3496557ad3563,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -452,6 +452,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766542835830121355, guid: 5850d4b5c261f204aa3c4a74ef586f47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7924995142646537440, guid: 5850d4b5c261f204aa3c4a74ef586f47,
         type: 3}
@@ -537,6 +542,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805245455527581388, guid: 5850d4b5c261f204aa3c4a74ef586f47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141961265521093881, guid: 5850d4b5c261f204aa3c4a74ef586f47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9141961265749347208, guid: 5850d4b5c261f204aa3c4a74ef586f47,
         type: 3}
@@ -1825,8 +1840,6 @@ MonoBehaviour:
   characterHeight: -1
   soulPoints: 0
   hookAnimator: {fileID: 187858374}
-  playerAnimator: {fileID: 721219866670527864, guid: 5850d4b5c261f204aa3c4a74ef586f47,
-    type: 3}
 --- !u!4 &1405607393
 Transform:
   m_ObjectHideFlags: 0

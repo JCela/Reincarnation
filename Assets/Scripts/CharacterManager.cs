@@ -33,15 +33,15 @@ public class CharacterManager : MonoBehaviour
     void Start()
     {
         thrust = new Vector2(0, 1);
-        character = GameObject.FindWithTag("Character");
+        //character = GameObject.FindWithTag("Character");
         uiManagerScript = this.GetComponent<UIManager>();
-        tag1 = character.transform.GetChild(0).gameObject;
-        tag2 = character.transform.GetChild(1).gameObject;
-        tag3 = character.transform.GetChild(2).gameObject;
+       // tag1 = character.transform.GetChild(0).gameObject;
+       // tag2 = character.transform.GetChild(1).gameObject;
+       // tag3 = character.transform.GetChild(2).gameObject;
 
-        tag1script = tag1.GetComponent<TagScript>();
-        tag2script = tag2.GetComponent<TagScript>();
-        tag3script = tag3.GetComponent<TagScript>();
+       // tag1script = tag1.GetComponent<TagScript>();
+       // tag2script = tag2.GetComponent<TagScript>();
+       // tag3script = tag3.GetComponent<TagScript>();
         
 
 
@@ -49,6 +49,14 @@ public class CharacterManager : MonoBehaviour
      
     void Update()
     {
+        character = GameObject.FindWithTag("Character");
+        tag1 = character.transform.GetChild(0).gameObject;
+        tag2 = character.transform.GetChild(1).gameObject;
+        tag3 = character.transform.GetChild(2).gameObject;
+
+        tag1script = tag1.GetComponent<TagScript>();
+        tag2script = tag2.GetComponent<TagScript>();
+        tag3script = tag3.GetComponent<TagScript>();
         killcoroutine = PushAndKill(1.0f);
         addnewcharacter = AddNewChar(1.0f);
         throwup = PushUp(1.0f);
