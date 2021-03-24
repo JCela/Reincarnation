@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 45c77036f4522446a9be1d728fc2bf1f
+guid: f95d8a1f1738bcd4bbb34c2c061dc2d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6389674225226867767
-    second: npc_moving _0
+      213: 5106292837811129508
+    second: npcfade_0
   - first:
-      213: -3695204900021284839
-    second: npc_moving _1
+      213: -7184057355749618713
+    second: npcfade_1
   - first:
-      213: -8995963338743920437
-    second: npc_moving _2
+      213: 5047293984533040873
+    second: npcfade_2
   - first:
-      213: 3445335544836460697
-    second: npc_moving _3
+      213: 8209068826768710244
+    second: npcfade_3
   - first:
-      213: 2956535836261196911
-    second: npc_moving _4
+      213: -6519790708845385769
+    second: npcfade_4
   - first:
-      213: -4916083861586490636
-    second: npc_moving _5
+      213: -1806687985310017976
+    second: npcfade_5
   - first:
-      213: 5419497749117653961
-    second: npc_moving _6
+      213: -2431186545760968425
+    second: npcfade_6
   - first:
-      213: 8425415645486478691
-    second: npc_moving _7
+      213: 1789052768096854178
+    second: npcfade_7
   - first:
-      213: -8462844941739886526
-    second: npc_moving _8
+      213: -6733514722035284233
+    second: npcfade_8
   - first:
-      213: 4111297231974076862
-    second: npc_moving _9
+      213: 6361905984626653157
+    second: npcfade_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: npc_moving _0
+      name: npcfade_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 734ed199adeaca850800000000000000
-      internalID: 6389674225226867767
+      spriteID: 4ac8adc18423dd640800000000000000
+      internalID: 5106292837811129508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _1
+      name: npcfade_1
       rect:
         serializedVersion: 2
         x: 1000
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 910d2f1b8bef7bcc0800000000000000
-      internalID: -3695204900021284839
+      spriteID: 7eb0380d5e91d4c90800000000000000
+      internalID: -7184057355749618713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _2
+      name: npcfade_2
       rect:
         serializedVersion: 2
         x: 2000
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc84bbd810be72380800000000000000
-      internalID: -8995963338743920437
+      spriteID: 9eece0123279b0640800000000000000
+      internalID: 5047293984533040873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _3
+      name: npcfade_3
       rect:
         serializedVersion: 2
         x: 3000
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99011028c6a40df20800000000000000
-      internalID: 3445335544836460697
+      spriteID: 46a184cba987ce170800000000000000
+      internalID: 8209068826768710244
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _4
+      name: npcfade_4
       rect:
         serializedVersion: 2
         x: 0
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f64af0ebda9b70920800000000000000
-      internalID: 2956535836261196911
+      spriteID: 7d7e065c4ec0585a0800000000000000
+      internalID: -6519790708845385769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _5
+      name: npcfade_5
       rect:
         serializedVersion: 2
         x: 1000
@@ -248,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fa4b1046cf86cbb0800000000000000
-      internalID: -4916083861586490636
+      spriteID: 84651af79da5de6e0800000000000000
+      internalID: -1806687985310017976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _6
+      name: npcfade_6
       rect:
         serializedVersion: 2
         x: 2000
@@ -269,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c3df253d7ce53b40800000000000000
-      internalID: 5419497749117653961
+      spriteID: 7116535b7b0b24ed0800000000000000
+      internalID: -2431186545760968425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _7
+      name: npcfade_7
       rect:
         serializedVersion: 2
         x: 3000
@@ -290,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3657d3ac3e61de470800000000000000
-      internalID: 8425415645486478691
+      spriteID: 2a0a7d6830ef3d810800000000000000
+      internalID: 1789052768096854178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _8
+      name: npcfade_8
       rect:
         serializedVersion: 2
         x: 0
@@ -311,14 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 248f1621d5fed8a80800000000000000
-      internalID: -8462844941739886526
+      spriteID: 7f649373900cd82a0800000000000000
+      internalID: -6733514722035284233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _9
+      name: npcfade_9
       rect:
         serializedVersion: 2
         x: 1000
@@ -332,8 +332,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb19cd5cc034e0930800000000000000
-      internalID: 4111297231974076862
+      spriteID: 5e77a1449c70a4850800000000000000
+      internalID: 6361905984626653157
       vertices: []
       indices: 
       edges: []

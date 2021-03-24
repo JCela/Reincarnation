@@ -8,7 +8,8 @@ public class TutorialText : MonoBehaviour
 {
     private int dialogueIndex;
     public Text activeDialogue;
-    public float timer = 0;
+    public float timer = 1;
+    public float time;
 
     public GameObject player;
     public GameObject target;
@@ -33,149 +34,150 @@ public class TutorialText : MonoBehaviour
     {
         //blackscreen = GameObject.FindWithTag("BlackScreen");
     }
-
+     
 
     void Update()
     {
-        timer++;
+        timer+= Time.deltaTime;
+        //time = timer * Time.deltaTime;
 
-        if (timer > 750 && timer < 1250)
+        if (timer > 5.0 && timer < 10.0)
         {
             dialogueIndex = 1;
-        }else if(timer > 1250 && timer < 2000)
+        }else if(timer > 10 && timer < 15)
         {
             dialogueIndex = 2;
-        }else if(timer > 2000 && timer < 3500)
+        }else if(timer > 15 && timer < 20)
         {
             player.transform.position = Vector3.Lerp(player.transform.position, (target.transform.position + offset), speed);
             dialogueIndex = 3;
-        }else if(timer > 3500 && timer < 4300)
+        }else if(timer > 20 && timer < 25)
         {
             dialogueIndex = 4;
         }
-        else if (timer > 4300 && timer < 5000)
+        else if (timer > 25 && timer < 30)
         {
             dialogueIndex = 5;
         }
-        else if (timer > 5000 && timer < 6000)
+        else if (timer > 30 && timer < 35)
         {
             dialogueIndex = 6;
         }
-        else if (timer > 6000 && timer < 7000)
+        else if (timer > 35 && timer < 40)
         {
             dialogueIndex = 7;
         }
-        else if (timer > 7000 && timer < 8000)
+        else if (timer > 40 && timer < 45)
         {
             dialogueIndex = 8;
         }
-        else if (timer > 8000 && timer < 9000)
+        else if (timer > 45 && timer < 50)
         {
             dialogueIndex = 9;
         }
-        else if (timer > 9000 && timer < 10000)
+        else if (timer > 50 && timer < 55)
         {
             dialogueIndex = 10;
         }
-        else if (timer > 10000 && timer < 11000)
+        else if (timer > 60 && timer < 65)
         {
             dialogueIndex = 11;
         }
-        else if (timer > 11000 && timer < 12000)
+        else if (timer > 65 && timer < 70)
         {
             dialogueIndex = 12;
         }
-        else if (timer > 12000 && timer < 13500)
+        else if (timer > 70 && timer < 75)
         {
             dialogueIndex = 13;
         }
-        else if (timer > 13500 && timer < 15000)
+        else if (timer > 75 && timer < 80)
         {
             dialogueIndex = 14;
         }
-        else if (timer > 15000 && timer < 16000)
+        else if (timer > 80 && timer < 85)
         {
             dialogueIndex = 15;
         }
-        else if (timer > 16000 && timer < 17000)
+        else if (timer > 85 && timer < 90)
         {
             dialogueIndex = 16;
         }
-        else if (timer > 17000 && timer < 17700)
+        else if (timer > 90 && timer < 95)
         {
             dialogueIndex = 17;
         }
-        else if (timer > 17700 && timer < 18000)
+        else if (timer > 95 && timer < 100)
         {
             dialogueIndex = 18;
             boss.transform.position = Vector3.Lerp(boss.transform.position, (target.transform.position + bossoffset), speed);
         }
-        else if (timer > 18000 && timer < 19000)
+        else if (timer > 100 && timer < 105)
         {
             dialogueIndex = 19;
         }
-        else if (timer > 19000 && timer < 20000)
+        else if (timer > 105 && timer < 110)
         {
             dialogueIndex = 20;
         }
-        else if (timer > 20000 && timer < 21000)
+        else if (timer > 110 && timer < 115)
         {
             dialogueIndex = 21;
         }
-        else if (timer > 21000 && timer < 22000)
+        else if (timer > 115 && timer < 120)
         {
             dialogueIndex = 22;
         }
-        else if (timer > 22000 && timer < 23000)
+        else if (timer > 120 && timer < 125)
         {
             dialogueIndex = 23;
         }
-        else if (timer > 23000 && timer < 24000)
+        else if (timer > 125 && timer < 130)
         {
             dialogueIndex = 24;
         }
-        else if (timer > 24000 && timer < 25000)
+        else if (timer > 130 && timer < 135)
         {
             dialogueIndex = 25;
         }
-        else if (timer > 25000 && timer < 26000)
+        else if (timer > 135 && timer < 140)
         {
             dialogueIndex = 26;
         }
-        else if (timer > 26000 && timer < 27000)
+        else if (timer > 140 && timer < 145)
         {
             dialogueIndex = 27;
         }
-        else if (timer > 27000 && timer < 28000)
+        else if (timer > 145 && timer < 150)
         {
             dialogueIndex = 28;
         }
-        else if (timer > 30000 && timer < 31000)
+        else if (timer > 150 && timer < 155)
         {
             dialogueIndex = 29;
         }
-        else if (timer > 31000 && timer < 32000)
+        else if (timer > 155 && timer < 160)
         {
             dialogueIndex = 30;
         }
-        else if (timer > 32000 && timer < 33000)
+        else if (timer > 160 && timer < 165)
         {
             dialogueIndex = 31;
         }
-        else if (timer > 33000 && timer < 34000)
+        else if (timer > 165 && timer < 170)
         {
             dialogueIndex = 32;
         }
-        else if (timer > 34000 && timer < 35000)
+        else if (timer > 170 && timer < 175)
         {
             dialogueIndex = 33;
         }
-        else if (timer > 35000 && timer < 36000)
+        else if (timer > 175 && timer < 180)
         {
             dialogueIndex = 34;
             blackscreen.SetActive(true);
         }
-        else if (timer > 36000)
+        else if (timer > 180)
         {
             SceneManager.LoadScene(1);
         }

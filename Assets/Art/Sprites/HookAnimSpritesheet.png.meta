@@ -1,37 +1,52 @@
 fileFormatVersion: 2
-guid: 45c77036f4522446a9be1d728fc2bf1f
+guid: e704a5a0b6c00b8479d3496557ad3563
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6389674225226867767
-    second: npc_moving _0
+      213: 8333736125097513092
+    second: HookAnimSpritesheet_0
   - first:
-      213: -3695204900021284839
-    second: npc_moving _1
+      213: -1617977913890646681
+    second: HookAnimSpritesheet_1
   - first:
-      213: -8995963338743920437
-    second: npc_moving _2
+      213: -7700776580177480183
+    second: HookAnimSpritesheet_2
   - first:
-      213: 3445335544836460697
-    second: npc_moving _3
+      213: 1564470441783020498
+    second: HookAnimSpritesheet_3
   - first:
-      213: 2956535836261196911
-    second: npc_moving _4
+      213: 714224765191242776
+    second: HookAnimSpritesheet_4
   - first:
-      213: -4916083861586490636
-    second: npc_moving _5
+      213: 6311564272753145307
+    second: HookAnimSpritesheet_5
   - first:
-      213: 5419497749117653961
-    second: npc_moving _6
+      213: 4891870629478347869
+    second: HookAnimSpritesheet_6
   - first:
-      213: 8425415645486478691
-    second: npc_moving _7
+      213: -6417860618686235208
+    second: HookAnimSpritesheet_7
   - first:
-      213: -8462844941739886526
-    second: npc_moving _8
+      213: -8545441168789041562
+    second: HookAnimSpritesheet_8
   - first:
-      213: 4111297231974076862
-    second: npc_moving _9
+      213: 167577706089914078
+    second: HookAnimSpritesheet_9
+  - first:
+      213: -5250065333560522544
+    second: HookAnimSpritesheet_10
+  - first:
+      213: 780716966122875575
+    second: HookAnimSpritesheet_11
+  - first:
+      213: -4460317646965388181
+    second: HookAnimSpritesheet_12
+  - first:
+      213: -7170457338068844247
+    second: HookAnimSpritesheet_13
+  - first:
+      213: 4885254805288002933
+    second: HookAnimSpritesheet_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -129,13 +144,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: npc_moving _0
+      name: HookAnimSpritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2072
-        width: 1000
-        height: 1000
+        x: 1
+        y: 0
+        width: 24
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 734ed199adeaca850800000000000000
-      internalID: 6389674225226867767
+      spriteID: 480174c0ad067a370800000000000000
+      internalID: 8333736125097513092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _1
+      name: HookAnimSpritesheet_1
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 2072
-        width: 1000
-        height: 1000
+        x: 32
+        y: 0
+        width: 24
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 910d2f1b8bef7bcc0800000000000000
-      internalID: -3695204900021284839
+      spriteID: 765de14e8a9cb89e0800000000000000
+      internalID: -1617977913890646681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _2
+      name: HookAnimSpritesheet_2
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 2072
-        width: 1000
-        height: 1000
+        x: 63
+        y: 0
+        width: 24
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc84bbd810be72380800000000000000
-      internalID: -8995963338743920437
+      spriteID: 906bfd33088512590800000000000000
+      internalID: -7700776580177480183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _3
+      name: HookAnimSpritesheet_3
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 2072
-        width: 1000
-        height: 1000
+        x: 94
+        y: 0
+        width: 24
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99011028c6a40df20800000000000000
-      internalID: 3445335544836460697
+      spriteID: 2db4310f39d16b510800000000000000
+      internalID: 1564470441783020498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _4
+      name: HookAnimSpritesheet_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1072
-        width: 1000
-        height: 1000
+        x: 126
+        y: 0
+        width: 24
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f64af0ebda9b70920800000000000000
-      internalID: 2956535836261196911
+      spriteID: 814c20bc3af69e900800000000000000
+      internalID: 714224765191242776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _5
+      name: HookAnimSpritesheet_5
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1072
-        width: 1000
-        height: 1000
+        x: 157
+        y: 0
+        width: 24
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fa4b1046cf86cbb0800000000000000
-      internalID: -4916083861586490636
+      spriteID: bd57f76144e279750800000000000000
+      internalID: 6311564272753145307
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _6
+      name: HookAnimSpritesheet_6
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 1072
-        width: 1000
-        height: 1000
+        x: 188
+        y: 0
+        width: 24
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,41 +284,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c3df253d7ce53b40800000000000000
-      internalID: 5419497749117653961
+      spriteID: d5439355b6a63e340800000000000000
+      internalID: 4891870629478347869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _7
+      name: HookAnimSpritesheet_7
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 1072
-        width: 1000
-        height: 1000
+        x: 219
+        y: 0
+        width: 24
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3657d3ac3e61de470800000000000000
-      internalID: 8425415645486478691
+      spriteID: 8bdfc3545cd2fe6a0800000000000000
+      internalID: -6417860618686235208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _8
+      name: HookAnimSpritesheet_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 72
-        width: 1000
-        height: 1000
+        x: 250
+        y: 0
+        width: 24
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 248f1621d5fed8a80800000000000000
-      internalID: -8462844941739886526
+      spriteID: 66e845d588e786980800000000000000
+      internalID: -8545441168789041562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_moving _9
+      name: HookAnimSpritesheet_9
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 72
-        width: 1000
-        height: 1000
+        x: 282
+        y: 0
+        width: 24
+        height: 130
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +347,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb19cd5cc034e0930800000000000000
-      internalID: 4111297231974076862
+      spriteID: ede93cb290b535200800000000000000
+      internalID: 167577706089914078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HookAnimSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 0
+        width: 24
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8488925650427b0800000000000000
+      internalID: -5250065333560522544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HookAnimSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 0
+        width: 24
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7baefdbb1f9a5da00800000000000000
+      internalID: 780716966122875575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HookAnimSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 0
+        width: 24
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cc83b5bb4c912c0800000000000000
+      internalID: -4460317646965388181
       vertices: []
       indices: 
       edges: []
@@ -350,7 +428,7 @@ TextureImporter:
     secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 1
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
