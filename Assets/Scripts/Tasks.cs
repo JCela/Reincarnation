@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Tasks : MonoBehaviour
 {
@@ -12,15 +13,18 @@ public class Tasks : MonoBehaviour
     private MoneyScript money;
     private GameObject manager;
 
-
+    private IEnumerator scene3;
     public int Ascended = 0;
     public int Descended = 0;
+
+    public GameObject blackScreen;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        currentTask = 0;
+        scene3 = NextScene(2);
+        
         manager = GameObject.FindWithTag("Manager");
         money = manager.GetComponent<MoneyScript>();
     }
@@ -64,10 +68,34 @@ public class Tasks : MonoBehaviour
                 if (Ascended >= 3)
                 {
                     Tasktext.text = "Wow thats great! By the way, you will be graded on your performance! If you get bored of randomly pressing buttons, maybe try to get to know the souls a bit by clicking on some of their attributes!";
-                    GetNewTask();
+                    money.Cash += 300;
+                    currentTask = 3;
                     Reset();
                 }
                 break;
+            case 3:
+                Tasktext.text = "you can click on the computer to see the soul!  Once you get your money you can spend it on upgrades after your daily shift!  See you tomorrow!";
+                StartCoroutine(scene3);
+                break;
+            case 4:
+                Tasktext.text = "Welcome back! It seems you have a special guest today!";
+                if(Ascended > 0)
+                {
+                    currentTask = 5;
+                    money.Cash += 100;
+                }else if(Descended > 0)
+                {
+                    currentTask = 6;
+                }
+                break;
+            case 5:
+                Tasktext.text = "I would agree with your decision";
+                break;
+            case 6:
+                Tasktext.text = "I have to tell you... if you send good people like that to reincarnate you won't make a lot of money.";
+                break;
+
+
         }
     }
 
@@ -95,6 +123,16 @@ public class Tasks : MonoBehaviour
         Descended = 0;
     }
 
+    private IEnumerator NextScene(int sceneIndex)
+    {
+        blackScreen.SetActive(true);
+        yield return new WaitForSeconds(600000f*Time.deltaTime);
+        //blackScreen.SetActive(true);
+        yield return new WaitForSeconds(6f);
+        
+        SceneManager.LoadScene(sceneIndex);
+        StopCoroutine(scene3);
+    }
 
 
 }
