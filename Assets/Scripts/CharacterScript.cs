@@ -14,16 +14,17 @@ public class CharacterScript : MonoBehaviour
     public int LevelOfIntegrity;
     
 
-    public Sprite[] characterSprite;
+    //public Sprite[] characterSprite;
 
     private int lastNumber = 0;
+    public int charClicks = 0;
 
     void Start()
     {
-        int spriteRandomizer = Random.Range(1, 10);
+        //int spriteRandomizer = Random.Range(1, 10);
         initvars = SetCharVariables();
         StartCoroutine(initvars);
-        this.GetComponent<SpriteRenderer>().sprite = characterSprite[spriteRandomizer];
+        //this.GetComponent<SpriteRenderer>().sprite = characterSprite[spriteRandomizer];
         
         
     }
@@ -45,7 +46,7 @@ public class CharacterScript : MonoBehaviour
         LevelOfIntegrity = GetRandom(0,10);
         yield return new WaitForSeconds(0.1f);
 
-        Debug.Log("Moral level" + LevelOfMoral);
+        //Debug.Log("Moral level" + LevelOfMoral);
         //Debug.Log("Actualization level" + LevelOfActualization);
         //Debug.Log("Loyalty level" + LevelOfLoyalty);
         //Debug.Log("Integrity level" + LevelOfIntegrity);

@@ -11,6 +11,7 @@ public class CameraSwipe : MonoBehaviour
     public Transform bottomofProfile;
     public Transform centerofProfile;
     public float camSpeed = 1.0f;
+    private int timer = 0;
 
     //Float Declaration
     private float camJourneyUp;
@@ -20,17 +21,22 @@ public class CameraSwipe : MonoBehaviour
     public GameObject Manager;
     private UIManager uiManagerScript;
     private CharacterManager charScript;
+    private ScoreManager score;
 
     void Start()
     {
         uiManagerScript = Manager.GetComponent<UIManager>();
         charScript = Manager.GetComponent<CharacterManager>();
+        score = Manager.GetComponent<ScoreManager>();
+
 
         camJourneyUp = Vector3.Distance(camTransf.position, topofProfile.position);
         camJourneyDown = Vector3.Distance(camTransf.position, bottomofProfile.position);
 
     }
     void Update(){
+        timer++;
+
         //Input variables, and calling checkinput with said variables
         float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");
@@ -46,28 +52,29 @@ public class CameraSwipe : MonoBehaviour
     {
         if (y == 1)
         {
-            MoveCamUp();
+            //MoveCamUp();
         }
         else if (y == -1)
         {
-            MoveCamDown();
+            //MoveCamDown();
             
         }
         else if (y == 0 && x == 0)
         {
-            ReturnCamMiddle();
+            //ReturnCamMiddle();
             
         }
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && timer >200)
         {
             ChoseAscend();
+            timer = 0;
 
         }
-        else if (Input.GetKeyDown("delete"))
+        else if (Input.GetKeyDown("delete") && timer > 200)
         {
             ChoseReincarnate();
-
+            timer = 0;
         }
     }
 
@@ -90,10 +97,12 @@ public class CameraSwipe : MonoBehaviour
     {
         uiManagerScript.AddToAscended();
         charScript.SwipeCharacterRight();
+        score.AddA();
     }
     void ChoseReincarnate()
     {
         uiManagerScript.AddToReincarnated();
         charScript.SwipeCharacterLeft();
+        score.AddB();
     }
 }

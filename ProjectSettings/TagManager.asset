@@ -10,6 +10,7 @@ TagManager:
   - tag2
   - tag
   - Overlay
+  - BlackScreen
   layers:
   - Default
   - TransparentFX

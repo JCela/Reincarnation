@@ -21,12 +21,16 @@ public class TagScript : MonoBehaviour
     public int random;
     public int randomText;
 
+    public int currentPoints;
     public GameObject tagText;
-    public TextMeshPro tag;
+    private TextMeshPro tag;
 
     public GameObject chatPrefab;
 
     private int lastNumber = 0;
+    private int chatClicks = 0;
+    public int clickableLimit = 2;
+    
 
     void Start()
     {
@@ -36,6 +40,7 @@ public class TagScript : MonoBehaviour
         randomText = GetRandom(0, 9);
         overlay = GameObject.FindWithTag("Overlay");
         chatSpawn = overlay.transform.GetChild(0).gameObject;
+        currentPoints = 0;
     }
 
     void Update()
@@ -55,7 +60,7 @@ public class TagScript : MonoBehaviour
         actualization = charscript.LevelOfActualization;
         loyalty = charscript.LevelOfLoyalty;
         integrity = charscript.LevelOfIntegrity;
-        Debug.Log("This is a debug test" + moral);
+        //Debug.Log("This is a debug test" + moral);
 
         WriteTags(); //take values and start writing
         StopCoroutine(inittags);    //stop setting values coroutine
@@ -65,78 +70,100 @@ public class TagScript : MonoBehaviour
     {
         if (random == 0)
         {
-            if (moral >= 5)
+            if (moral >= 5)//Positive
             {
+                
                 //Choose random moral tag
                 switch (randomText)
                 {
                     case 0:
                         tag.SetText("Altruist");
+                        Addpoint(1);
                         break;
                     case 1:
                         tag.SetText("Generous");
+                        Addpoint(3);
                         break;
                     case 2:
                         tag.SetText("Foster Parent");
+                        Addpoint(5);
                         break;
                     case 3:
                         tag.SetText("Conservationist");
+                        Addpoint(1);
                         break;
                     case 4:
                         tag.SetText("Charity Worker");
+                        Addpoint(1);
                         break;
                     case 5:
                         tag.SetText("Volunteer");
+                        Addpoint(2);
                         break;
                     case 6:
                         tag.SetText("Teacher");
+                        Addpoint(2);
                         break;
                     case 7:
                         tag.SetText("Donater");
+                        Addpoint(1);
                         break;
                     case 8:
                         tag.SetText("Selfless");
+                        Addpoint(2);
                         break;
                     case 9:
                         tag.SetText("Altruist");
+                        Addpoint(3);
                         break;
 
                 }
             }
             else
             {
+                
                 //Choose a random immoral tag
                 switch (randomText)
                 {
                     case 0:
                         tag.SetText("Egoist");
+                        Losepoint(2);
                         break;
                     case 1:
                         tag.SetText("Criminal");
+                        Losepoint(5);
                         break;
                     case 2:
                         tag.SetText("Murderer");
+                        Losepoint(5);
                         break;
                     case 3:
                         tag.SetText("Vandal");
+                        Losepoint(3);
                         break;
                     case 4:
                         tag.SetText("Litter bug");
+                        Losepoint(1);
                         break;
                     case 5:
                         tag.SetText("Doesn't Flush");
+                        Losepoint(1);
                         break;
                     case 6:
                         tag.SetText("Seat Leaver Upper");
+                        Losepoint(1);
                         break;
                     case 7:
                         tag.SetText("Gluton");
+                        Losepoint(1);
                         break;
                     case 8:
                         tag.SetText("Lustful");
+                        Losepoint(3);
                         break;
                     case 9:
                         tag.SetText("Cheater");
+                        Losepoint(4);
                         break;
                 }
 
@@ -146,73 +173,95 @@ public class TagScript : MonoBehaviour
         {
             if (actualization >= 5)
             {
+                
                 switch (randomText)
                 {
                     case 0:
                         tag.SetText("Traveler");
+                        Addpoint(2);
                         break;
                     case 1:
                         tag.SetText("CEO");
+                        Addpoint(1);
                         break;
                     case 2:
                         tag.SetText("Author");
+                        Addpoint(4);
                         break;
                     case 3:
                         tag.SetText("Married");
+                        Addpoint(4);
                         break;
                     case 4:
                         tag.SetText("Single Parent");
+                        Addpoint(3);
                         break;
                     case 5:
                         tag.SetText("Educated");
+                        Addpoint(2);
                         break;
                     case 6:
                         tag.SetText("Graduate");
+                        Addpoint(2);
                         break;
                     case 7:
                         tag.SetText("Executive");
+                        Addpoint(3);
                         break;
                     case 8:
                         tag.SetText("Retired");
+                        Addpoint(3);
                         break;
                     case 9:
                         tag.SetText("Profitable");
+                        Addpoint(3);
                         break;
                 }
             }
             else
             {
+                
                 switch (randomText)
                 {
                     case 0:
                         tag.SetText("Coach Potato");
+                        Losepoint(1);
                         break;
                     case 1:
                         tag.SetText("Cheater");
+                        Losepoint(3);
                         break;
                     case 2:
                         tag.SetText("Single");
+                        Losepoint(1);
                         break;
                     case 3:
                         tag.SetText("Uneducated");
+                        Losepoint(3);
                         break;
                     case 4:
                         tag.SetText("Hacker");
+                        Losepoint(5);
                         break;
                     case 5:
                         tag.SetText("Stoner");
+                        Losepoint(1);
                         break;
                     case 6:
                         tag.SetText("Scammer");
+                        Losepoint(5);
                         break;
                     case 7:
                         tag.SetText("Lonely");
+                        Losepoint(2);
                         break;
                     case 8:
                         tag.SetText("Confused");
+                        Losepoint(1);
                         break;
                     case 9:
                         tag.SetText("Lost");
+                        Losepoint(2);
                         break;
                 }
             }
@@ -221,73 +270,95 @@ public class TagScript : MonoBehaviour
         {
             if (loyalty >= 5)
             {
+                
                 switch (randomText)
                 {
                     case 0:
                         tag.SetText("Married Once");
+                        Addpoint(1);
                         break;
                     case 1:
                         tag.SetText("Social Hub");
+                        Addpoint(3);
                         break;
                     case 2:
                         tag.SetText("Trustworthy");
+                        Addpoint(3);
                         break;
                     case 3:
                         tag.SetText("Reliable");
+                        Addpoint(2);
                         break;
                     case 4:
                         tag.SetText("Best friend");
+                        Addpoint(3);
                         break;
                     case 5:
                         tag.SetText("Bud");
+                        Addpoint(2);
                         break;
                     case 6:
                         tag.SetText("Real one");
+                        Addpoint(5);
                         break;
                     case 7:
                         tag.SetText("FILLER");
+                        Addpoint(1);
                         break;
                     case 8:
                         tag.SetText("FILLER");
+                        Addpoint(1);
                         break;
                     case 9:
                         tag.SetText("FILLER");
+                        Addpoint(1);
                         break;
                 }
             }
             else
             {
+                
                 switch (randomText)
                 {
                     case 0:
                         tag.SetText("Married Many Times ;)");
+                        Losepoint(3);
                         break;
                     case 1:
                         tag.SetText("Robber");
+                        Losepoint(5);
                         break;
                     case 2:
                         tag.SetText("Stealer");
+                        Losepoint(4);
                         break;
                     case 3:
                         tag.SetText("Thief");
+                        Losepoint(4);
                         break;
                     case 4:
                         tag.SetText("Cheater");
+                        Losepoint(4);
                         break;
                     case 5:
                         tag.SetText("Enemy");
+                        Losepoint(5);
                         break;
                     case 6:
                         tag.SetText("Stranger");
+                        Losepoint(1);
                         break;
                     case 7:
                         tag.SetText("Unknown");
+                        Losepoint(2);
                         break;
                     case 8:
                         tag.SetText("Bearded");
+                        Addpoint(1);
                         break;
                     case 9:
                         tag.SetText("Quiet");
+                        Losepoint(2);
                         break;
                 }
             }
@@ -296,42 +367,54 @@ public class TagScript : MonoBehaviour
         {
             if(integrity >= 5)
             {
+                
                 switch (randomText)
                 {
                     case 0:
                         tag.SetText("Strong");
+                        Addpoint(2);
                         break;
                     case 1:
                         tag.SetText("Brave");
+                        Addpoint(3);
                         break;
                     case 2:
                         tag.SetText("Leader");
+                        Addpoint(5);
                         break;
                     case 3:
                         tag.SetText("Tough");
+                        Addpoint(1);
                         break;
                     case 4:
                         tag.SetText("Unkillable");
+                        Addpoint(2);
                         break;
                     case 5:
                         tag.SetText("Trustworthy");
+                        Addpoint(5);
                         break;
                     case 6:
                         tag.SetText("Unchanging");
+                        Addpoint(2);
                         break;
                     case 7:
                         tag.SetText("Unwavering");
+                        Addpoint(3);
                         break;
                     case 8:
                         tag.SetText("Revolutionary");
+                        Addpoint(5);
                         break;
                     case 9:
                         tag.SetText("Prideful");
+                        Addpoint(1);
                         break;
                 }
             }
             else
             {
+                Losepoint(5);
                 switch (randomText)
                 {
                     case 0:
@@ -379,11 +462,26 @@ public class TagScript : MonoBehaviour
         return rand;
     }
 
+    public void Addpoint(int amount)
+    {
+        currentPoints += amount;
+    }
+
+    public void Losepoint(int amount)
+    {
+        currentPoints -= amount;
+    }
     public void OnMouseDown()
     {
-        GameObject bubble = (GameObject)Instantiate(chatPrefab, chatSpawn.transform.position, transform.rotation);
-        bubble.transform.parent = overlay.transform;
-        ChatScript cs = bubble.GetComponent<ChatScript>();
-        cs.WriteBubble(random, randomText, moral, integrity, loyalty, actualization, 0);
+        if (chatClicks < 1 && charscript.charClicks < clickableLimit)
+        {
+            GameObject bubble = (GameObject)Instantiate(chatPrefab, chatSpawn.transform.position, transform.rotation);
+            bubble.transform.parent = overlay.transform;
+            ChatScript cs = bubble.GetComponent<ChatScript>();
+            cs.WriteBubble(random, randomText, moral, integrity, loyalty, actualization, 0);
+            chatClicks++;
+            charscript.charClicks++;
+
+        }
     }
 }
