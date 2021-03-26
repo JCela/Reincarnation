@@ -35,7 +35,7 @@ public class ScoreManager : MonoBehaviour
 
         totalValue = m + a + i + l;
 
-        //Debug.Log("Current Score" + (currentScore / currentRound)*100 + "%");
+        Debug.Log("Current Score" + (currentScore / currentRound)*100 + "%");
         score = (currentScore / currentRound) * 100;
 
 
