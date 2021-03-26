@@ -18,6 +18,6 @@ public class testNameScript : MonoBehaviour
 
 		var characterGenerator = GetComponent<newAttributeTest>();
 
-		Debug.Log("This Character is " + characterGenerator.RandomCharacter());
+		Debug.Log("I am " + characterGenerator.RandomCharacter());
     }
 }

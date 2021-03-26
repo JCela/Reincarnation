@@ -50,45 +50,56 @@ public class newAttributeTest : MonoBehaviour
         //int negGSIndex = Random.Range(0, negativeGS.Length);
 
 
-        int rand = Random.Range(0, 2);
+        int randV = Random.Range(0, 2);
+        int randF = Random.Range(0, 2);
+        int randGS = Random.Range(0, 2);
 
 
-        if (rand == 2)
+        if (randV == 1)
         {
             Virtue = positiveVirtue;
-            
-
-            Fulfillment = positiveFulfillment;
-            
-
-            GS = positiveGS;
-            
 
         }
 
-        if (rand == 1)
+        if (randV == 2)
         {
             Virtue = neutralVirtue;
-            
-
-            Fulfillment = neutralFulfillment;
-           
-
-            GS = neutralGS;
-           
         }
 
-        if (rand == 0)
+        if (randV == 0)
         {
             Virtue = negativeVirtue;
-           
-
-            Fulfillment = negativeFulfillment;
-            
-
-            GS = negativeGS;
-           
         }
+
+        if (randF == 1)
+        {
+            Fulfillment = positiveFulfillment;
+        }
+
+        if (randF == 2)
+        {
+            Fulfillment = neutralFulfillment;
+        }
+
+        if (randF == 0)
+        {
+            Fulfillment = negativeFulfillment;
+        }
+        if (randGS == 1)
+        {
+            GS = positiveGS;
+        }
+
+        if (randGS == 2)
+        {
+            GS = neutralGS;
+        }
+
+        if (randGS == 0)
+        {
+            GS = negativeGS;
+        }
+
 
 
         int VirtueIndex = Random.Range(0, Virtue.Length);
@@ -99,8 +110,8 @@ public class newAttributeTest : MonoBehaviour
 
 
         string characterInfo =
-            Virtue[VirtueIndex] + " "
-            + Fulfillment[FulfillmentIndex] + " "
+            Virtue[VirtueIndex] + ". "
+            + Fulfillment[FulfillmentIndex] + " and "
             + GS[GSIndex];
 
         return characterInfo;
