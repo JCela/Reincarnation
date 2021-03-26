@@ -50,9 +50,9 @@ public class newAttributeTest : MonoBehaviour
         //int negGSIndex = Random.Range(0, negativeGS.Length);
 
 
-        int randV = Random.Range(0, 2);
-        int randF = Random.Range(0, 2);
-        int randGS = Random.Range(0, 2);
+        int randV = Random.Range(1, 4);
+        int randF = Random.Range(1, 4);
+        int randGS = Random.Range(1, 4);
 
 
         if (randV == 1)
@@ -66,7 +66,7 @@ public class newAttributeTest : MonoBehaviour
             Virtue = neutralVirtue;
         }
 
-        if (randV == 0)
+        if (randV == 3)
         {
             Virtue = negativeVirtue;
         }
@@ -81,7 +81,7 @@ public class newAttributeTest : MonoBehaviour
             Fulfillment = neutralFulfillment;
         }
 
-        if (randF == 0)
+        if (randF == 3)
         {
             Fulfillment = negativeFulfillment;
         }
@@ -95,7 +95,7 @@ public class newAttributeTest : MonoBehaviour
             GS = neutralGS;
         }
 
-        if (randGS == 0)
+        if (randGS == 3)
         {
             GS = negativeGS;
         }
