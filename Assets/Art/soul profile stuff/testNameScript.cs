@@ -13,7 +13,11 @@ public class testNameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var nameGenerator = GetComponent<randomNameGenerator>();
-        Debug.Log(nameGenerator.GetRandomName());
+		//var nameGenerator = GetComponent<randomNameGenerator>();
+		//Debug.Log(nameGenerator.GetRandomName());
+
+		var characterGenerator = GetComponent<newAttributeTest>();
+
+		Debug.Log("This Character is " + characterGenerator.RandomCharacter());
     }
 }
