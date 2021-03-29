@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     float currentScore;
     float score;
 
-
+    
     private UIManager uiManagerScript;
     private GameObject character;
     private CharacterScript charscript;
@@ -92,7 +92,7 @@ public class ScoreManager : MonoBehaviour
             grade = "F";
         }
 
-        if (currentRound >= 5)
+        if (currentRound >= 2)
         {
             uiManagerScript.Grade.text = grade;
         }else if(currentRound >= 9)
