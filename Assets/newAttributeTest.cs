@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class newAttributeTest : MonoBehaviour
 {
+    //attribute category
+
     string[] positiveVirtue = { "Generous", "loyal", "Devoted", "loving",
                                 "kind", "sincere", "peaceful", "patient" };
     string[] positiveFulfillment = {"I have a wonderful family","I have a great job","I work out everyday",
@@ -23,16 +25,28 @@ public class newAttributeTest : MonoBehaviour
     string[] Fulfillment;
     string[] GS;
 
+    //soul point calculation
 
+    public int Virtuepoint;
+    public int Fulfillmentpoint;
+    public int GSpoint;
+    public int Totalpoint;
+
+    public ProfileDisplay pd;
     
 
 
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        Virtuepoint = 0;
+        Fulfillmentpoint = 0;
+        GSpoint = 0;
+        Totalpoint = 0;
+        pd = GetComponent<ProfileDisplay>();
+        
     }
 
     public string RandomCharacter()
@@ -58,6 +72,7 @@ public class newAttributeTest : MonoBehaviour
         if (randV == 1)
         {
             Virtue = positiveVirtue;
+            Virtuepoint = Virtuepoint + 5;
 
         }
 
@@ -106,15 +121,21 @@ public class newAttributeTest : MonoBehaviour
         int FulfillmentIndex = Random.Range(0, Fulfillment.Length);
         int GSIndex = Random.Range(0, GS.Length);
 
-        
+        pd.VirtueText.text = Virtue[VirtueIndex];
+        pd.FulText.text = Fulfillment[FulfillmentIndex];
+        pd.GSText.text = GS[GSIndex];
 
 
-        string characterInfo =
-            Virtue[VirtueIndex] + ". "
-            + Fulfillment[FulfillmentIndex] + " and "
-            + GS[GSIndex];
 
+        string characterInfo = "";
+            //Virtue[VirtueIndex] + ". "
+            //+ Fulfillment[FulfillmentIndex] + " and "
+            //+ GS[GSIndex];
+            
         return characterInfo;
+
+
+
 
     }
 
@@ -123,4 +144,5 @@ public class newAttributeTest : MonoBehaviour
     {
         
     }
+
 }
