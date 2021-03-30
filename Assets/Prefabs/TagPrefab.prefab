@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3326814265208195212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.96, z: 0}
-  m_LocalScale: {x: 0.8125, y: 0.76875, z: 0.36264598}
+  m_LocalPosition: {x: 1.199, y: -5.0355, z: 0}
+  m_LocalScale: {x: 4.8553185, y: 5.992856, z: 1.2010746}
   m_Children:
   - {fileID: 3326814265921433594}
   m_Father: {fileID: 0}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69f8ca117c80dca42bfc943e55561356, type: 3}
-  m_Color: {r: 0.8705883, g: 0.8705883, b: 0.8705883, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c555db1782b80424fab3bb7c9e4ec92b, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   integrity: 0
   random: 0
   randomText: 0
+  currentPoints: 0
   tagText: {fileID: 0}
   chatPrefab: {fileID: 5642006252658177974, guid: efa14207ff3b1fa40adb5656853e8961,
     type: 3}
@@ -120,18 +121,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.070347786, y: 1.2711229}
+  m_Offset: {x: -0.0045113564, y: -0.0025234818}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.7, y: 7.7}
+    oldSize: {x: 3.67, y: 0.85}
     newSize: {x: 10.8, y: 19.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.331545, y: 2.490034}
+  m_Size: {x: 3.5724454, y: 0.7745112}
   m_EdgeRadius: 0
 --- !u!50 &7207605009373830216
 Rigidbody2D:
@@ -183,15 +184,15 @@ RectTransform:
   m_GameObject: {fileID: 3326814265921433593}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4519774, y: 1, z: 1}
+  m_LocalScale: {x: 0.24625781, y: 0.54484546, z: 0.54484546}
   m_Children: []
   m_Father: {fileID: 3326814265208195215}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.08, y: 1.448}
-  m_SizeDelta: {x: 11.332087, y: 2.3809881}
+  m_AnchoredPosition: {x: 0.01001, y: 0.11931}
+  m_SizeDelta: {x: 9.701618, y: 0.76396775}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &3326814265921433598
 MeshRenderer:
@@ -301,7 +302,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -312,7 +313,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 0
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0

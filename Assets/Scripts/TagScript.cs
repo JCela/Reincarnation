@@ -6,7 +6,7 @@ using TMPro;
 public class TagScript : MonoBehaviour
 {
     private IEnumerator inittags;
-    
+    SpriteRenderer sprite;
 
     private CharacterScript charscript;
     private GameObject character;
@@ -48,7 +48,7 @@ public class TagScript : MonoBehaviour
 
         character = GameObject.FindWithTag("Character");
         charscript = character.GetComponent<CharacterScript>();
- 
+        sprite = this.gameObject.GetComponent<SpriteRenderer>();
         tagText = this.transform.GetChild(0).gameObject;
         tag = tagText.GetComponent<TextMeshPro>();
     }
@@ -85,7 +85,7 @@ public class TagScript : MonoBehaviour
                         Addpoint(3);
                         break;
                     case 2:
-                        tag.SetText("Foster Parent");
+                        tag.SetText("Parent");
                         Addpoint(5);
                         break;
                     case 3:
@@ -146,11 +146,11 @@ public class TagScript : MonoBehaviour
                         Losepoint(1);
                         break;
                     case 5:
-                        tag.SetText("Doesn't Flush");
+                        tag.SetText("Flusher");
                         Losepoint(1);
                         break;
                     case 6:
-                        tag.SetText("Seat Leaver Upper");
+                        tag.SetText("Farter");
                         Losepoint(1);
                         break;
                     case 7:
@@ -321,7 +321,7 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Married Many Times ;)");
+                        tag.SetText("Married Twice");
                         Losepoint(3);
                         break;
                     case 1:
@@ -442,7 +442,7 @@ public class TagScript : MonoBehaviour
                         tag.SetText("Unfair boss");
                         break;
                     case 8:
-                        tag.SetText("Propoganda Spreader");
+                        tag.SetText("Propogandor");
                         break;
                     case 9:
                         tag.SetText("Liar");
@@ -473,6 +473,7 @@ public class TagScript : MonoBehaviour
     }
     public void OnMouseDown()
     {
+        FadeTag();
         if (chatClicks < 1 && charscript.charClicks < clickableLimit)
         {
             GameObject bubble = (GameObject)Instantiate(chatPrefab, chatSpawn.transform.position, transform.rotation);
@@ -483,5 +484,13 @@ public class TagScript : MonoBehaviour
             charscript.charClicks++;
 
         }
+    }
+
+    
+
+    public void FadeTag()
+    {
+        Debug.Log("Reached");
+        sprite.color = new Color(1f,1f,1f,0.5f);
     }
 }

@@ -12,6 +12,7 @@ public class Tasks : MonoBehaviour
     private float Cash;
     private MoneyScript money;
     private GameObject manager;
+    private UIManager uiManagerScript;
 
     private IEnumerator scene3;
     public int Ascended = 0;
@@ -27,6 +28,7 @@ public class Tasks : MonoBehaviour
         
         manager = GameObject.FindWithTag("Manager");
         money = manager.GetComponent<MoneyScript>();
+        uiManagerScript = manager.GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class Tasks : MonoBehaviour
         {
             case 0:
                 //Send 3 souls to the afterlife
-                Tasktext.text = "Welcome friend!  So glad that you decided to join our company.  Alright, now that you're all set up, lets see how well you handle the job. Try ascending or descending this ghost by pressing space/del.";
+                Tasktext.text = "Welcome to the SPC, I will be your supervisor.  Your job will consist of sorting souls, but I also give extra tasks to my employees to encourage them to do an even better job.  Your first task is simply to sort a soul to ascend by pressing.[SPACE].";
                 if(Ascended > 0)
                 {
                     currentTask = 1;
@@ -51,8 +53,8 @@ public class Tasks : MonoBehaviour
                 }
                 break;
             case 1:
-                Tasktext.text = "Great work! Wow you learn quick. Now try descending 2 souls! .";
-                if (Descended >= 2)
+                Tasktext.text = "Not all souls are fit for the afterlife.  It can be difficult to force a soul into mortality again, but we must keep the afterlife only for those who deserve it. Now try descending a soul by pressing [DEL] .";
+                if (Descended >= 1)
                 {
                     Tasktext.text = "COMPLETE";
                     money.Cash += 300;
@@ -62,23 +64,32 @@ public class Tasks : MonoBehaviour
                 }
                 break;
             case 2:
-                Tasktext.text = "You will earn money for each task you complete! Free money yay! Now try sending 3 souls to the afterlife.";
-                money.cashSign.gameObject.SetActive(true);
-                money.cashText.gameObject.SetActive(true);
-                if (Ascended >= 3)
+                Tasktext.text = "I'm letting you know now, we will be carefully monitoring your decisions.  You can see how you are doing below your desk represented by a letter grade A-F! Now try sending 2 souls to ascend [SPACE]";
+                // money.cashSign.gameObject.SetActive(true);
+                // money.cashText.gameObject.SetActive(true);
+                uiManagerScript.Grade.gameObject.SetActive(true);
+
+                if (Ascended >= 1)
                 {
-                    Tasktext.text = "Wow thats great! By the way, you will be graded on your performance! If you get bored of randomly pressing buttons, maybe try to get to know the souls a bit by clicking on some of their attributes!";
-                    money.Cash += 300;
-                    currentTask = 3;
-                    Reset();
+                    Tasktext.text = "I'm letting you know now, we will be carefully monitoring your decisions.  You can see how you are doing below your desk represented by a letter grade A-F! Now try sending 1 souls to ascend [SPACE]";
+                    if (Ascended >= 2)
+                    {
+                        money.Cash += 300;
+                        currentTask = 3;
+                        Reset();
+                    }
                 }
                 break;
             case 3:
-                Tasktext.text = "you can click on the computer to see the soul!  Once you get your money you can spend it on upgrades after your daily shift!  See you tomorrow!";
-                StartCoroutine(scene3);
+                Tasktext.text = "You can click on the computer to see more about the soul and view their profile!   Click the computer and then press [SPACE] or [DEL] to let me know you are ready to begin official business!";
+                if(Ascended >= 1 || Descended >= 1)
+                {
+                    StartCoroutine(scene3);
+                }
+                //StartCoroutine(scene3);   
                 break;
             case 4:
-                Tasktext.text = "Welcome back! It seems you have a special guest today!";
+                Tasktext.text = "OK! It seems only right for your first official day of work you get a test!  This is Catrina, try to sort her correctly!";
                 if(Ascended > 0)
                 {
                     currentTask = 5;
@@ -89,10 +100,10 @@ public class Tasks : MonoBehaviour
                 }
                 break;
             case 5:
-                Tasktext.text = "I would agree with your decision";
+                Tasktext.text = "I would agree with your decision, now try sorting through a couple people and i will see you in a bit!";
                 break;
             case 6:
-                Tasktext.text = "I have to tell you... if you send good people like that to reincarnate you won't make a lot of money.";
+                Tasktext.text = "I have to tell you... if you send good people like that to reincarnate you won't make it very long here...  Try doing better with this next soul...";
                 break;
 
 
