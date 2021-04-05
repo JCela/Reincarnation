@@ -23,7 +23,7 @@ public class TagScript : MonoBehaviour
 
     public int currentPoints;
     public GameObject tagText;
-    private TextMeshPro tag;
+    public TextMeshPro settag;
 
     public GameObject chatPrefab;
 
@@ -50,7 +50,7 @@ public class TagScript : MonoBehaviour
         charscript = character.GetComponent<CharacterScript>();
         sprite = this.gameObject.GetComponent<SpriteRenderer>();
         tagText = this.transform.GetChild(0).gameObject;
-        tag = tagText.GetComponent<TextMeshPro>();
+        settag = tagText.GetComponent<TextMeshPro>();
     }
 
     private IEnumerator SetTagValues()
@@ -66,7 +66,7 @@ public class TagScript : MonoBehaviour
         StopCoroutine(inittags);    //stop setting values coroutine
     }
 
-    private void WriteTags()
+    public void WriteTags()
     {
         if (random == 0)
         {
@@ -77,43 +77,43 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Altruist");
+                        settag.SetText("Altruist");
                         Addpoint(1);
                         break;
                     case 1:
-                        tag.SetText("Generous");
+                        settag.SetText("Generous");
                         Addpoint(3);
                         break;
                     case 2:
-                        tag.SetText("Parent");
+                        settag.SetText("Parent");
                         Addpoint(5);
                         break;
                     case 3:
-                        tag.SetText("Conservationist");
+                        settag.SetText("Conservationist");
                         Addpoint(1);
                         break;
                     case 4:
-                        tag.SetText("Charity Worker");
+                        settag.SetText("Charity Worker");
                         Addpoint(1);
                         break;
                     case 5:
-                        tag.SetText("Volunteer");
+                        settag.SetText("Volunteer");
                         Addpoint(2);
                         break;
                     case 6:
-                        tag.SetText("Teacher");
+                        settag.SetText("Teacher");
                         Addpoint(2);
                         break;
                     case 7:
-                        tag.SetText("Donater");
+                        settag.SetText("Donater");
                         Addpoint(1);
                         break;
                     case 8:
-                        tag.SetText("Selfless");
+                        settag.SetText("Selfless");
                         Addpoint(2);
                         break;
                     case 9:
-                        tag.SetText("Altruist");
+                        settag.SetText("Altruist");
                         Addpoint(3);
                         break;
 
@@ -126,43 +126,43 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Egoist");
+                        settag.SetText("Egoist");
                         Losepoint(2);
                         break;
                     case 1:
-                        tag.SetText("Criminal");
+                        settag.SetText("Criminal");
                         Losepoint(5);
                         break;
                     case 2:
-                        tag.SetText("Murderer");
+                        settag.SetText("Murderer");
                         Losepoint(5);
                         break;
                     case 3:
-                        tag.SetText("Vandal");
+                        settag.SetText("Vandal");
                         Losepoint(3);
                         break;
                     case 4:
-                        tag.SetText("Litter bug");
+                        settag.SetText("Litter bug");
                         Losepoint(1);
                         break;
                     case 5:
-                        tag.SetText("Flusher");
+                        settag.SetText("Flusher");
                         Losepoint(1);
                         break;
                     case 6:
-                        tag.SetText("Farter");
+                        settag.SetText("Farter");
                         Losepoint(1);
                         break;
                     case 7:
-                        tag.SetText("Gluton");
+                        settag.SetText("Gluton");
                         Losepoint(1);
                         break;
                     case 8:
-                        tag.SetText("Lustful");
+                        settag.SetText("Lustful");
                         Losepoint(3);
                         break;
                     case 9:
-                        tag.SetText("Cheater");
+                        settag.SetText("Cheater");
                         Losepoint(4);
                         break;
                 }
@@ -177,43 +177,43 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Traveler");
+                        settag.SetText("Traveler");
                         Addpoint(2);
                         break;
                     case 1:
-                        tag.SetText("CEO");
+                        settag.SetText("CEO");
                         Addpoint(1);
                         break;
                     case 2:
-                        tag.SetText("Author");
+                        settag.SetText("Author");
                         Addpoint(4);
                         break;
                     case 3:
-                        tag.SetText("Married");
+                        settag.SetText("Married");
                         Addpoint(4);
                         break;
                     case 4:
-                        tag.SetText("Single Parent");
+                        settag.SetText("Single Parent");
                         Addpoint(3);
                         break;
                     case 5:
-                        tag.SetText("Educated");
+                        settag.SetText("Educated");
                         Addpoint(2);
                         break;
                     case 6:
-                        tag.SetText("Graduate");
+                        settag.SetText("Graduate");
                         Addpoint(2);
                         break;
                     case 7:
-                        tag.SetText("Executive");
+                        settag.SetText("Executive");
                         Addpoint(3);
                         break;
                     case 8:
-                        tag.SetText("Retired");
+                        settag.SetText("Retired");
                         Addpoint(3);
                         break;
                     case 9:
-                        tag.SetText("Profitable");
+                        settag.SetText("Profitable");
                         Addpoint(3);
                         break;
                 }
@@ -224,43 +224,43 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Coach Potato");
+                        settag.SetText("Coach Potato");
                         Losepoint(1);
                         break;
                     case 1:
-                        tag.SetText("Cheater");
+                        settag.SetText("Cheater");
                         Losepoint(3);
                         break;
                     case 2:
-                        tag.SetText("Single");
+                        settag.SetText("Single");
                         Losepoint(1);
                         break;
                     case 3:
-                        tag.SetText("Uneducated");
+                        settag.SetText("Uneducated");
                         Losepoint(3);
                         break;
                     case 4:
-                        tag.SetText("Hacker");
+                        settag.SetText("Hacker");
                         Losepoint(5);
                         break;
                     case 5:
-                        tag.SetText("Stoner");
+                        settag.SetText("Stoner");
                         Losepoint(1);
                         break;
                     case 6:
-                        tag.SetText("Scammer");
+                        settag.SetText("Scammer");
                         Losepoint(5);
                         break;
                     case 7:
-                        tag.SetText("Lonely");
+                        settag.SetText("Lonely");
                         Losepoint(2);
                         break;
                     case 8:
-                        tag.SetText("Confused");
+                        settag.SetText("Confused");
                         Losepoint(1);
                         break;
                     case 9:
-                        tag.SetText("Lost");
+                        settag.SetText("Lost");
                         Losepoint(2);
                         break;
                 }
@@ -274,43 +274,43 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Married Once");
+                        settag.SetText("Married Once");
                         Addpoint(1);
                         break;
                     case 1:
-                        tag.SetText("Social Hub");
+                        settag.SetText("Social Hub");
                         Addpoint(3);
                         break;
                     case 2:
-                        tag.SetText("Trustworthy");
+                        settag.SetText("Trustworthy");
                         Addpoint(3);
                         break;
                     case 3:
-                        tag.SetText("Reliable");
+                        settag.SetText("Reliable");
                         Addpoint(2);
                         break;
                     case 4:
-                        tag.SetText("Best friend");
+                        settag.SetText("Best friend");
                         Addpoint(3);
                         break;
                     case 5:
-                        tag.SetText("Bud");
+                        settag.SetText("Bud");
                         Addpoint(2);
                         break;
                     case 6:
-                        tag.SetText("Real one");
+                        settag.SetText("Real one");
                         Addpoint(5);
                         break;
                     case 7:
-                        tag.SetText("FILLER");
+                        settag.SetText("FILLER");
                         Addpoint(1);
                         break;
                     case 8:
-                        tag.SetText("FILLER");
+                        settag.SetText("FILLER");
                         Addpoint(1);
                         break;
                     case 9:
-                        tag.SetText("FILLER");
+                        settag.SetText("FILLER");
                         Addpoint(1);
                         break;
                 }
@@ -321,43 +321,43 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Married Twice");
+                        settag.SetText("Married Twice");
                         Losepoint(3);
                         break;
                     case 1:
-                        tag.SetText("Robber");
+                        settag.SetText("Robber");
                         Losepoint(5);
                         break;
                     case 2:
-                        tag.SetText("Stealer");
+                        settag.SetText("Stealer");
                         Losepoint(4);
                         break;
                     case 3:
-                        tag.SetText("Thief");
+                        settag.SetText("Thief");
                         Losepoint(4);
                         break;
                     case 4:
-                        tag.SetText("Cheater");
+                        settag.SetText("Cheater");
                         Losepoint(4);
                         break;
                     case 5:
-                        tag.SetText("Enemy");
+                        settag.SetText("Enemy");
                         Losepoint(5);
                         break;
                     case 6:
-                        tag.SetText("Stranger");
+                        settag.SetText("Stranger");
                         Losepoint(1);
                         break;
                     case 7:
-                        tag.SetText("Unknown");
+                        settag.SetText("Unknown");
                         Losepoint(2);
                         break;
                     case 8:
-                        tag.SetText("Bearded");
+                        settag.SetText("Bearded");
                         Addpoint(1);
                         break;
                     case 9:
-                        tag.SetText("Quiet");
+                        settag.SetText("Quiet");
                         Losepoint(2);
                         break;
                 }
@@ -371,43 +371,43 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Strong");
+                        settag.SetText("Strong");
                         Addpoint(2);
                         break;
                     case 1:
-                        tag.SetText("Brave");
+                        settag.SetText("Brave");
                         Addpoint(3);
                         break;
                     case 2:
-                        tag.SetText("Leader");
+                        settag.SetText("Leader");
                         Addpoint(5);
                         break;
                     case 3:
-                        tag.SetText("Tough");
+                        settag.SetText("Tough");
                         Addpoint(1);
                         break;
                     case 4:
-                        tag.SetText("Unkillable");
+                        settag.SetText("Unkillable");
                         Addpoint(2);
                         break;
                     case 5:
-                        tag.SetText("Trustworthy");
+                        settag.SetText("Trustworthy");
                         Addpoint(5);
                         break;
                     case 6:
-                        tag.SetText("Unchanging");
+                        settag.SetText("Unchanging");
                         Addpoint(2);
                         break;
                     case 7:
-                        tag.SetText("Unwavering");
+                        settag.SetText("Unwavering");
                         Addpoint(3);
                         break;
                     case 8:
-                        tag.SetText("Revolutionary");
+                        settag.SetText("Revolutionary");
                         Addpoint(5);
                         break;
                     case 9:
-                        tag.SetText("Prideful");
+                        settag.SetText("Prideful");
                         Addpoint(1);
                         break;
                 }
@@ -418,34 +418,34 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Team Flipper");
+                        settag.SetText("Team Flipper");
                         break;
                     case 1:
-                        tag.SetText("Snitch");
+                        settag.SetText("Snitch");
                         break;
                     case 2:
-                        tag.SetText("Snake");
+                        settag.SetText("Snake");
                         break;
                     case 3:
-                        tag.SetText("Rat");
+                        settag.SetText("Rat");
                         break;
                     case 4:
-                        tag.SetText("Dishonest");
+                        settag.SetText("Dishonest");
                         break;
                     case 5:
-                        tag.SetText("Self concious");
+                        settag.SetText("Self concious");
                         break;
                     case 6:
-                        tag.SetText("Nepotist");
+                        settag.SetText("Nepotist");
                         break;
                     case 7:
-                        tag.SetText("Unfair boss");
+                        settag.SetText("Unfair boss");
                         break;
                     case 8:
-                        tag.SetText("Propogandor");
+                        settag.SetText("Propogandor");
                         break;
                     case 9:
-                        tag.SetText("Liar");
+                        settag.SetText("Liar");
                         break;
                 }
             }
