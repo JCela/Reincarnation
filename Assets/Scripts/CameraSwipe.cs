@@ -22,6 +22,8 @@ public class CameraSwipe : MonoBehaviour
     private UIManager uiManagerScript;
     private CharacterManager charScript;
     private ScoreManager score;
+    public bool pressedDown = false;
+    public bool pressedUp = false;
 
     void Start()
     {
@@ -75,6 +77,18 @@ public class CameraSwipe : MonoBehaviour
         {
             ChoseReincarnate();
             timer = 0;
+        }
+        else if(pressedUp == true)
+        {
+            
+            ChoseAscend();
+            timer = 0;
+            pressedUp = false;
+        }else if(pressedDown == true)
+        {
+            ChoseReincarnate();
+            timer = 0;
+            pressedDown = false;
         }
     }
 
