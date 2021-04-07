@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7207605009373830216}
   m_Layer: 0
   m_Name: TagPrefab
-  m_TagString: Untagged
+  m_TagString: tag1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   randomText: 0
   currentPoints: 0
   tagText: {fileID: 0}
+  settag: {fileID: 0}
   chatPrefab: {fileID: 5642006252658177974, guid: efa14207ff3b1fa40adb5656853e8961,
     type: 3}
   clickableLimit: 2
