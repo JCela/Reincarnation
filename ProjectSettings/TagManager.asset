@@ -11,6 +11,12 @@ TagManager:
   - tag
   - Overlay
   - BlackScreen
+  - Menu
+  - Task Container
+  - UIText
+  - Noti2
+  - Noti1
+  - Noti5
   layers:
   - Default
   - TransparentFX

@@ -42,7 +42,7 @@ public class Tasks : MonoBehaviour
         {
             case 0:
                 //Send 3 souls to the afterlife
-                Tasktext.text = "Welcome to the SPC, I will be your supervisor.  Your job will consist of sorting souls, but I also give extra tasks to my employees to encourage them to do an even better job.  Your first task is simply to sort a soul to ascend by pressing.[SPACE].";
+                Tasktext.text = "Welcome to the SPC, I will be your supervisor.  Your job will consist of sorting souls, but I also give extra tasks to my employees.  Your first task is simply to sort a soul to ascend by pressing.[SPACE].";
                 if(Ascended > 0)
                 {
                     currentTask = 1;
@@ -66,14 +66,14 @@ public class Tasks : MonoBehaviour
                 }
                 break;
             case 2:
-                Tasktext.text = "I'm letting you know now, we will be carefully monitoring your decisions.  You can see how you are doing below your desk represented by a letter grade A-F! Now try sending 2 souls to ascend [SPACE]";
+                Tasktext.text = "I'm letting you know now, we will be carefully monitoring your decisions.  Whether or not you sent the soul to the appropriate place will determine the grade seen on your desk! Now try sending 2 souls to ascend [SPACE]";
                 // money.cashSign.gameObject.SetActive(true);
                 // money.cashText.gameObject.SetActive(true);
                 uiManagerScript.Grade.gameObject.SetActive(true);
 
                 if (Ascended >= 1)
                 {
-                    Tasktext.text = "I'm letting you know now, we will be carefully monitoring your decisions.  You can see how you are doing below your desk represented by a letter grade A-F! Now try sending 1 souls to ascend [SPACE]";
+                    Tasktext.text = "I'm letting you know now, we will be carefully monitoring your decisions.  Whether or not you sent the soul to the appropriate place will determine the grade seen on your desk! Now try sending 1 soul to ascend [SPACE]";
                     if (Ascended >= 2)
                     {
                         money.Cash += 300;
@@ -83,7 +83,7 @@ public class Tasks : MonoBehaviour
                 }
                 break;
             case 3:
-                Tasktext.text = "You can click on the computer to see more about the soul and view their profile!   Click the computer and then press [SPACE] or [DEL] to let me know you are ready to begin official business!";
+                Tasktext.text = "You can click on the computer to see more about the soul!   Click the computer and click the buttons with notifications, then press [SPACE] or [DEL] to let me know you are ready to begin official business!";
                 if(Ascended >= 1 || Descended >= 1)
                 {
                     StartCoroutine(scene2);
