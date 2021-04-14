@@ -14,6 +14,7 @@ public class Tasks : MonoBehaviour
     private GameObject manager;
     private UIManager uiManagerScript;
 
+    private IEnumerator scene2;
     private IEnumerator scene3;
     public int Ascended = 0;
     public int Descended = 0;
@@ -24,8 +25,9 @@ public class Tasks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scene3 = NextScene(2);
-        
+        //currentTask = State.currentTask;
+        scene2 = NextScene(2);
+        scene3 = NextScene(3);
         manager = GameObject.FindWithTag("Manager");
         money = manager.GetComponent<MoneyScript>();
         uiManagerScript = manager.GetComponent<UIManager>();
@@ -84,28 +86,23 @@ public class Tasks : MonoBehaviour
                 Tasktext.text = "You can click on the computer to see more about the soul and view their profile!   Click the computer and then press [SPACE] or [DEL] to let me know you are ready to begin official business!";
                 if(Ascended >= 1 || Descended >= 1)
                 {
-                    StartCoroutine(scene3);
+                    StartCoroutine(scene2);
                 }
                 //StartCoroutine(scene3);   
                 break;
             case 4:
-                Tasktext.text = "OK! It seems only right for your first official day of work you get a test!  This is Catrina, try to sort her correctly!";
-                if(Ascended > 0)
+                Tasktext.text = "Now that it's night, you can click the computer to look at the shop or view your journal!  Press either [SPACE] or [DEL] to go to the next day.";
+                if(Ascended > 0 || Descended > 0)
                 {
                     currentTask = 5;
-                    money.Cash += 100;
-                }else if(Descended > 0)
-                {
-                    currentTask = 6;
+                    StartCoroutine(scene3);
                 }
+                
                 break;
             case 5:
-                Tasktext.text = "I would agree with your decision, now try sorting through a couple people and i will see you in a bit!";
+                Tasktext.text = "Now that you are ready for the job, it is time to get sorting!  Do your best, no pressure!";
+                uiManagerScript.Grade.gameObject.SetActive(true);
                 break;
-            case 6:
-                Tasktext.text = "I have to tell you... if you send good people like that to reincarnate you won't make it very long here...  Try doing better with this next soul...";
-                break;
-
 
         }
     }
@@ -136,12 +133,15 @@ public class Tasks : MonoBehaviour
 
     private IEnumerator NextScene(int sceneIndex)
     {
-        blackScreen.SetActive(true);
-        yield return new WaitForSeconds(600000f*Time.deltaTime);
         //blackScreen.SetActive(true);
-        yield return new WaitForSeconds(6f);
+        //yield return new WaitForSeconds(600000f*Time.deltaTime);
+        //blackScreen.SetActive(true);
+        State.score = manager.GetComponent<ScoreManager>().score;
+        Debug.Log(State.score);
+        yield return new WaitForSeconds(3f);
         
         SceneManager.LoadScene(sceneIndex);
+        StopCoroutine(scene2);
         StopCoroutine(scene3);
     }
 
