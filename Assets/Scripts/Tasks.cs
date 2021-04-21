@@ -25,9 +25,12 @@ public class Tasks : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //currentTask = State.currentTask;
+        if (State.currentTask > 4)
+        {
+            currentTask = State.currentTask;
+        }
         scene2 = NextScene(2);
-        scene3 = NextScene(3);
+        scene3 = NextScene(1);
         manager = GameObject.FindWithTag("Manager");
         money = manager.GetComponent<MoneyScript>();
         uiManagerScript = manager.GetComponent<UIManager>();
@@ -37,14 +40,17 @@ public class Tasks : MonoBehaviour
     void Update()
     {
         //KEEP TRACK OF STATS
+        
        
         switch (currentTask)
         {
             case 0:
+                State.Day = 1;
                 //Send 3 souls to the afterlife
                 Tasktext.text = "Welcome to the SPC, I will be your supervisor.  Your job will consist of sorting souls, but I also give extra tasks to my employees.  Your first task is simply to sort a soul to ascend by pressing.[SPACE].";
                 if(Ascended > 0)
                 {
+                    
                     currentTask = 1;
                     Reset();
                 }
@@ -94,7 +100,9 @@ public class Tasks : MonoBehaviour
                 Tasktext.text = "Now that it's night, you can click the computer to look at the shop or view your journal!  Press either [SPACE] or [DEL] to go to the next day.";
                 if(Ascended > 0 || Descended > 0)
                 {
+                    State.currentTask = 5;
                     currentTask = 5;
+                    State.Day = 2;
                     StartCoroutine(scene3);
                 }
                 
