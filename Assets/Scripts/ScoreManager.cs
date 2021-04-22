@@ -6,9 +6,9 @@ public class ScoreManager : MonoBehaviour
 {
     int currentRound;
     float currentScore;
-    float score;
+    public float score;
 
-
+    private State state;
     private UIManager uiManagerScript;
     private GameObject character;
     private CharacterScript charscript;
@@ -21,9 +21,16 @@ public class ScoreManager : MonoBehaviour
     private int i;
     private int l;
 
+    void Start()
+    {
+        currentScore = State.score/100;
+        currentRound = 1;  //BROKEN, NEEDS FIX
+    }
     // Update is called once per frame
     void Update()
     {
+
+        //State.score = score;
         character = GameObject.FindWithTag("Character");
         charscript = character.GetComponent<CharacterScript>();
         uiManagerScript = this.GetComponent<UIManager>();
@@ -35,69 +42,58 @@ public class ScoreManager : MonoBehaviour
 
         totalValue = m + a + i + l;
 
-        //Debug.Log("Current Score" + (currentScore / currentRound)*100 + "%");
+        Debug.Log("Current Score" + (currentScore / currentRound)*100 + "%");
         score = (currentScore / currentRound) * 100;
 
 
-        if(score >= 97)
+        if(score >= 90)
         {
             grade = "A+";
         }
-        else if(score >= 93)
+        else if(score >= 80)
         {
             grade = "A";
         }
-        else if(score >= 90)
+        else if(score >= 70)
         {
             grade = "A-";
         }
-        else if(score >= 87)
+        else if(score >= 60)
         {
             grade = "B+";
         }
-        else if (score >= 83)
+        else if (score >= 50)
         {
             grade = "B";
         }
-        else if (score >= 80)
+        else if (score >= 40)
         {
             grade = "B-";
         }
-        else if (score >= 77)
+        else if (score >= 30)
         {
             grade = "C+";
         }
-        else if (score >= 73)
+        else if (score >= 20)
         {
             grade = "C";
         }
-        else if (score >= 70)
+        else if (score >= 10)
         {
             grade = "C-";
         }
-        else if (score >= 67)
+        else if (score >= 0)
         {
             grade = "D+";
         }
-        else if (score >= 63)
-        {
-            grade = "D";
-        }
-        else if (score >= 60)
-        {
-            grade = "D-";
-        }
-        else
-        {
-            grade = "F";
-        }
+        
 
         if (currentRound >= 5)
         {
             uiManagerScript.Grade.text = grade;
         }else if(currentRound >= 9)
         {
-            uiManagerScript.Grade.text = "Grade" + grade;
+            //uiManagerScript.Grade.text = "Grade" + grade;
         }
 
     }

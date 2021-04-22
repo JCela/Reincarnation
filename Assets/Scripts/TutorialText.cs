@@ -41,143 +41,150 @@ public class TutorialText : MonoBehaviour
         timer+= Time.deltaTime;
         //time = timer * Time.deltaTime;
 
-        if (timer > 5.0 && timer < 10.0)
+        if (timer > 3 && timer < 5)
         {
             dialogueIndex = 1;
-        }else if(timer > 10 && timer < 15)
+        }else if(timer > 5 && timer < 7)
         {
             dialogueIndex = 2;
-        }else if(timer > 15 && timer < 20)
+        }else if(timer > 7 && timer < 10)
         {
             player.transform.position = Vector3.Lerp(player.transform.position, (target.transform.position + offset), speed);
             dialogueIndex = 3;
-        }else if(timer > 20 && timer < 25)
+        }else if(timer > 10 && timer < 15)
         {
             dialogueIndex = 4;
         }
-        else if (timer > 25 && timer < 30)
+        else if (timer > 15 && timer < 20)
         {
             dialogueIndex = 5;
         }
-        else if (timer > 30 && timer < 35)
+        else if (timer > 20 && timer < 25)
         {
             dialogueIndex = 6;
         }
-        else if (timer > 35 && timer < 40)
+        else if (timer > 25 && timer < 30)
         {
             dialogueIndex = 7;
+            
+        }
+        else if (timer > 30 && timer < 35)
+        {
+            dialogueIndex = 8;
+            
+        }
+        else if (timer > 35 && timer < 40)
+        {
+            dialogueIndex = 9;
+            
+            
         }
         else if (timer > 40 && timer < 45)
         {
-            dialogueIndex = 8;
+            blackscreen.SetActive(true);
+            
+            dialogueIndex = 10;
         }
         else if (timer > 45 && timer < 50)
         {
-            dialogueIndex = 9;
-        }
-        else if (timer > 50 && timer < 55)
-        {
-            dialogueIndex = 10;
-        }
-        else if (timer > 60 && timer < 65)
-        {
+            SceneManager.LoadScene(1);
             dialogueIndex = 11;
         }
-        else if (timer > 65 && timer < 70)
+        else if (timer > 55 && timer < 60)
         {
             dialogueIndex = 12;
         }
-        else if (timer > 70 && timer < 75)
+        else if (timer > 60 && timer < 65)
         {
             dialogueIndex = 13;
         }
-        else if (timer > 75 && timer < 80)
+        else if (timer > 65 && timer < 70)
         {
             dialogueIndex = 14;
         }
-        else if (timer > 80 && timer < 85)
+        else if (timer > 42 && timer < 45)
         {
             dialogueIndex = 15;
         }
-        else if (timer > 85 && timer < 90)
+        else if (timer > 48 && timer < 51)
         {
             dialogueIndex = 16;
         }
-        else if (timer > 90 && timer < 95)
+        else if (timer > 51 && timer < 54)
         {
             dialogueIndex = 17;
         }
-        else if (timer > 95 && timer < 100)
+        else if (timer > 58 && timer < 61)
         {
             dialogueIndex = 18;
             boss.transform.position = Vector3.Lerp(boss.transform.position, (target.transform.position + bossoffset), speed);
         }
-        else if (timer > 100 && timer < 105)
+        else if (timer > 61 && timer < 64)
         {
             dialogueIndex = 19;
         }
-        else if (timer > 105 && timer < 110)
+        else if (timer > 64 && timer < 67)
         {
             dialogueIndex = 20;
         }
-        else if (timer > 110 && timer < 115)
+        else if (timer > 67 && timer < 70)
         {
             dialogueIndex = 21;
         }
-        else if (timer > 115 && timer < 120)
+        else if (timer > 70 && timer < 73)
         {
             dialogueIndex = 22;
         }
-        else if (timer > 120 && timer < 125)
+        else if (timer > 73 && timer < 76)
         {
             dialogueIndex = 23;
         }
-        else if (timer > 125 && timer < 130)
+        else if (timer > 79 && timer < 82)
         {
             dialogueIndex = 24;
         }
-        else if (timer > 130 && timer < 135)
+        else if (timer > 82 && timer < 85)
         {
             dialogueIndex = 25;
         }
-        else if (timer > 135 && timer < 140)
+        else if (timer > 85 && timer < 88)
         {
             dialogueIndex = 26;
         }
-        else if (timer > 140 && timer < 145)
+        else if (timer > 88 && timer < 91)
         {
             dialogueIndex = 27;
         }
-        else if (timer > 145 && timer < 150)
+        else if (timer > 91 && timer < 94)
         {
             dialogueIndex = 28;
         }
-        else if (timer > 150 && timer < 155)
+        else if (timer > 94 && timer < 97)
         {
             dialogueIndex = 29;
         }
-        else if (timer > 155 && timer < 160)
+        else if (timer > 100 && timer < 103)
         {
             dialogueIndex = 30;
         }
-        else if (timer > 160 && timer < 165)
+        else if (timer > 103 && timer < 106)
         {
             dialogueIndex = 31;
         }
-        else if (timer > 165 && timer < 170)
+        else if (timer > 106 && timer < 109)
         {
             dialogueIndex = 32;
         }
-        else if (timer > 170 && timer < 175)
+        else if (timer > 109 && timer < 112)
         {
             dialogueIndex = 33;
         }
-        else if (timer > 175 && timer < 180)
+        else if (timer > 112 && timer < 115)
         {
             dialogueIndex = 34;
             blackscreen.SetActive(true);
         }
-        else if (timer > 180)
+        else if (timer > 118)
         {
             SceneManager.LoadScene(1);
         }
@@ -200,33 +207,35 @@ public class TutorialText : MonoBehaviour
                 break;
             case 4:
                 MakeTextOfficer();
-                activeDialogue.text = "What is your name?";
+                activeDialogue.text = "Welcome to the afterlife, Rhett.  I will be your soul sorter for today to determine if you are to be reincarnated or ascend to the afterlife.";
                 break;
             case 5:
                 MakeTextPlayer();
-                activeDialogue.text = "I-I think it's Rhett";
+                activeDialogue.text = "Wow, it’s less… glamorous...than I would have thought.";
 
                 break;
             case 6:
                 MakeTextOfficer();
-                activeDialogue.text = "Hmmm... Welcome to the afterlife, Rhett.  I will be your soul sorter for today.";
+                activeDialogue.text = "Your file says you were a serial killer....";
                 break;
             case 7:
-                activeDialogue.text = "I will choose if you will be reincarnated or ascend to the afterlife.";
+                MakeTextPlayer();
+                activeDialogue.text = "That may be true...";
                 break;
             case 8:
-                MakeTextPlayer();
-                activeDialogue.text = "Wow, it’s less… ";
+                MakeTextOfficer();
+                activeDialogue.text = "I'm sorry, but unfortunately you are to be a soul sorter for eternity, or until you somehow prove you have changed enough to warrant a new destination.  Work starts...now.";
                 break;
             case 9:
-                activeDialogue.text = "Glamorous...than I would have thought.";
+                MakeTextPlayer();
+                activeDialogue.text = "Wait what?!.";
                 break;
             case 10:
                 MakeTextOfficer();
-                activeDialogue.text = "Your file is quite anomalous.  It says here that you took 17 lives.";
+                activeDialogue.text = " ";
                 break;
             case 11:
-                activeDialogue.text = "Is that true? No point in lying by the way, you're already dead.";
+                activeDialogue.text = " ";
                 break;
             case 12:
                 MakeTextPlayer();
