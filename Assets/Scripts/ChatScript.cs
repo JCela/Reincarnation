@@ -1186,7 +1186,7 @@ public class ChatScript : MonoBehaviour
  
         GameObject subjectbubble = (GameObject)Instantiate(chatPrefab, chatSpawn.transform.position, transform.rotation);
         subjectbubble.transform.parent = overlay.transform;
-        subjectbubble.transform.localScale = new Vector3(0.05f, 0.03f, 1);
+        subjectbubble.transform.localScale = new Vector3(0.035f, 0.02f, 1);
         ChatScript cs = subjectbubble.GetComponent<ChatScript>();
         cs.WriteBubble(x, y, m, i, l, a, chatInd);
     }
@@ -1196,7 +1196,7 @@ public class ChatScript : MonoBehaviour
      
         GameObject selfbubble = (GameObject)Instantiate(selfPrefab, selfSpawn.transform.position, transform.rotation);
         selfbubble.transform.parent = overlay.transform;
-        selfbubble.transform.localScale = new Vector3(0.05f, 0.03f, 1);
+        selfbubble.transform.localScale = new Vector3(0.035f, 0.02f, 1);
         ChatScript cs = selfbubble.GetComponent<ChatScript>();
         cs.WriteBubble(x, y, m, i, l, a, chatInd);
     }

@@ -27,15 +27,15 @@ RectTransform:
   m_GameObject: {fileID: 2012371873019826678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 0.838548}
+  m_LocalScale: {x: 1, y: 1, z: 0.838548}
   m_Children: []
   m_Father: {fileID: 2710636878570472039}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15, y: -28}
-  m_SizeDelta: {x: 618.34735, y: 414.93817}
+  m_AnchoredPosition: {x: -15, y: -18}
+  m_SizeDelta: {x: 618.34735, y: 332.10895}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8164697079098061122
 CanvasRenderer:
@@ -105,8 +105,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.3, y: 0}
-  m_SizeDelta: {x: 2423.15, y: 776.74194}
+  m_AnchoredPosition: {x: -12.615, y: 23.091}
+  m_SizeDelta: {x: 2419.849, y: 1249.6384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4034026402729727681
 CanvasRenderer:
@@ -137,7 +137,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 140
+    m_FontSize: 180
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -177,7 +177,7 @@ RectTransform:
   m_GameObject: {fileID: 8167716979459598019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 0.78, y: 0.83586, z: 0.489985}
+  m_LocalScale: {x: 0.122605205, y: 0.122605205, z: 0.30037352}
   m_Children:
   - {fileID: 8939757290280395784}
   - {fileID: 6244135309726650799}
@@ -186,7 +186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 141.74, y: 277}
+  m_AnchoredPosition: {x: 140.58, y: 275.6}
   m_SizeDelta: {x: 509.2, y: 85.148346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970996610470933743
