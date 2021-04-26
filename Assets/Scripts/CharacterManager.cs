@@ -17,7 +17,7 @@ public class CharacterManager : MonoBehaviour
     private IEnumerator lerpPlayer;
     private IEnumerator throwup;
     public GameObject charPrefab;
-    public int characterHeight = 1;
+    public int characterHeight = -2;
 
     private GameObject tag1;
     private GameObject tag2;
@@ -37,7 +37,7 @@ public class CharacterManager : MonoBehaviour
     public Transform endMarker;
     void Start()
     {
-        thrust = new Vector2(0, 1);
+        thrust = new Vector2(1, 0);
         //character = GameObject.FindWithTag("Character");
         uiManagerScript = this.GetComponent<UIManager>();
        // tag1 = character.transform.GetChild(0).gameObject;
@@ -64,7 +64,7 @@ public class CharacterManager : MonoBehaviour
         tag3script = tag3.GetComponent<TagScript>();
         killcoroutine = PushAndKill(1.0f);
         addnewcharacter = AddNewChar(1.0f);
-        lerpPlayer = LerpPlayer(15000.0f);
+        
         throwup = PushUp(1.0f);
         character = GameObject.FindWithTag("Character");
         rb = character.GetComponent<Rigidbody2D>();
@@ -80,6 +80,7 @@ public class CharacterManager : MonoBehaviour
     {
         Debug.Log("Player has chosen to send character to Ascend.");
         //hookAnimator.SetTrigger("clawGrab");
+        playerAnimator.SetTrigger("Ascended");
         taskScript.Ascended++;
         StartCoroutine(throwup);
         
@@ -101,7 +102,7 @@ public class CharacterManager : MonoBehaviour
         
         yield return new WaitForSeconds(waitTime);
         hookAnimator.ResetTrigger("clawGrab");
-        rb.AddForce(thrust, ForceMode2D.Impulse);
+        //rb.AddForce(thrust, ForceMode2D.Impulse);
         yield return new WaitForSeconds(1.0f);
         
         StartCoroutine(killcoroutine);
@@ -122,17 +123,11 @@ public class CharacterManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         //Add a new character
-        Instantiate(charPrefab, new Vector3(-4, characterHeight, -1), Quaternion.identity);
-        StartCoroutine(lerpPlayer);
+        Instantiate(charPrefab, new Vector3(-1, characterHeight, -1), Quaternion.identity);
+        //StartCoroutine(lerpPlayer);
         StopCoroutine(addnewcharacter);
     }
 
-    private IEnumerator LerpPlayer(float waitTime)
-    {
-        yield return new WaitForSeconds(1.0f);
-        character.transform.position = Vector3.Lerp(startMarker.position, endMarker.position, 1f);
-        yield return new WaitForSeconds(waitTime);
-        StopCoroutine(lerpPlayer);
-    }
+   
 
 }

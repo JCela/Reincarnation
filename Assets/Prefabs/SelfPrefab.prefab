@@ -27,14 +27,14 @@ RectTransform:
   m_GameObject: {fileID: 2012371873019826678}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.838548, y: 1.0901123, z: 0.838548}
+  m_LocalScale: {x: 1, y: 0.5, z: 0.838548}
   m_Children: []
   m_Father: {fileID: 2710636878570472039}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15, y: -73}
+  m_AnchoredPosition: {x: -15, y: -28}
   m_SizeDelta: {x: 618.34735, y: 414.93817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8164697079098061122
@@ -58,13 +58,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.058823533, g: 0.04705883, b: 0.04705883, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 1617e12d610aa3a4e90ed5e619ad3a3c, type: 3}
+  m_Texture: {fileID: 2800000, guid: dcab710b7e31a0044959d861e95105bb, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -105,8 +105,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.4, y: 0}
-  m_SizeDelta: {x: 2228.4155, y: 776.74194}
+  m_AnchoredPosition: {x: -12.3, y: 0}
+  m_SizeDelta: {x: 2423.15, y: 776.74194}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4034026402729727681
 CanvasRenderer:
@@ -177,7 +177,7 @@ RectTransform:
   m_GameObject: {fileID: 8167716979459598019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 0.5862046}
+  m_LocalScale: {x: 0.78, y: 0.83586, z: 0.489985}
   m_Children:
   - {fileID: 8939757290280395784}
   - {fileID: 6244135309726650799}
@@ -186,7 +186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 143.35, y: 259.93}
+  m_AnchoredPosition: {x: 141.74, y: 277}
   m_SizeDelta: {x: 509.2, y: 85.148346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1970996610470933743
@@ -259,4 +259,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 3

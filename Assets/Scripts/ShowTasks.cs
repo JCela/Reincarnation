@@ -8,9 +8,11 @@ public class ShowTasks : MonoBehaviour
     private GameObject tasks;
     private GameObject taskContainer;
     private GameObject UIContainter;
-    private GameObject bossIcon;
+    //private GameObject bossIcon;
     private GameObject noti;
     private bool notified = false;
+    public Animator telephoneAnimator;
+    public Animator playerAnimator;
 
     private bool taskOn = false;
     // Start is called before the first frame update
@@ -23,7 +25,7 @@ public class ShowTasks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bossIcon = taskContainer.transform.GetChild(0).gameObject;
+        //bossIcon = taskContainer.transform.GetChild(0).gameObject;
         tasks = UIContainter.transform.GetChild(5).gameObject;
         noti = GameObject.FindWithTag("Noti1");
     }
@@ -32,19 +34,25 @@ public class ShowTasks : MonoBehaviour
     {
         if (taskOn == true)
         {
-            bossIcon.SetActive(false);
+            //bossIcon.SetActive(false);
+            telephoneAnimator.SetBool("isCalled", false);
+            playerAnimator.SetBool("isCalled", false);
             tasks.SetActive(false);
             taskOn = false;
         }
         else
         {
-            bossIcon.SetActive(true);
+            //bossIcon.SetActive(true);
+            
+            telephoneAnimator.SetTrigger("isCalled");
+            playerAnimator.SetTrigger("isCalled");
             tasks.SetActive(true);
             taskOn = true;
         }
 
         if (notified == false)
         {
+            //telephoneAnimator.SetBool("needStretch", false);
             noti.SetActive(false);
             notified = true;
         }

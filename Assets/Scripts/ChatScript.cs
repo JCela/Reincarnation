@@ -1178,7 +1178,7 @@ public class ChatScript : MonoBehaviour
 
     public void PushUp()
     {
-        rb.AddForce(thrust, ForceMode2D.Impulse);
+        //rb.AddForce(thrust, ForceMode2D.Impulse);
     }
 
     public void NewSubjectBubble()
