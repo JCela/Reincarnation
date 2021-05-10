@@ -31,6 +31,7 @@ public class CharacterManager : MonoBehaviour
     private TagScript tag2script;
     private TagScript tag3script;
 
+    public Animator HoleAnimator;
     public Animator hookAnimator;
     private Animator playerAnimator;
     public Transform startMarker;
@@ -91,6 +92,7 @@ public class CharacterManager : MonoBehaviour
         Debug.Log("Player has chosen to send character to Reincarnate.");
         taskScript.Descended++;
         //rb.AddForce(-thrust, ForceMode2D.Impulse);
+        HoleAnimator.SetTrigger("isFaded");
         playerAnimator.SetTrigger("Faded");
         StartCoroutine(killcoroutine);
         StartCoroutine(addnewcharacter);
@@ -123,6 +125,7 @@ public class CharacterManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         //Add a new character
+        HoleAnimator.ResetTrigger("isFaded");
         Instantiate(charPrefab, new Vector3(-1, characterHeight, -1), Quaternion.identity);
         //StartCoroutine(lerpPlayer);
         StopCoroutine(addnewcharacter);

@@ -60,7 +60,7 @@ public class ChatScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        //Start Alruist convo
+                        //Start Inventor convo
                         switch (chatIndex)
                         {
                             case 0:
@@ -68,29 +68,22 @@ public class ChatScript : MonoBehaviour
                                 StartCoroutine(waitandspawnself);
                                 break;
                             case 1:
-                                chatText.text = "Hello, what in your life made you an altruist?";
+                                chatText.text = "So you were an inventor? What type of stuff did you invent?";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
                             case 2:
-                                chatText.text = "In grade school it would hurt me more to see my friends get bullied than me be bullied myself.";
-                                StartCoroutine(waitandspawnsubject);
+                                chatText.text = "I invented a backscratcher";
+                                StartCoroutine(waitandspawnself);
                                 break;
                             case 3:
-                                chatText.text = "I always felt their pain exponentially more than mine.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 4:
-                                chatText.text = "Did putting others so far ahead of yourself detrement your own mental health?";
+                                chatText.text = "How inventive! Invent anything else?";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
-                            case 5:
-                                chatText.text = "Yes, I often failed to see my own problems, and focused on other peoples problems more than my own.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 6:
-                                chatText.text = "Interesting. Thank you for the extra information.";
+                            case 4:
+                                chatText.text = "Nope.";
                                 //StartCoroutine(waitandspawnsubject);
                                 break;
+                            
 
                         }
                         break;
@@ -171,7 +164,7 @@ public class ChatScript : MonoBehaviour
                         chatText.text = "I don't have an ego!";
                         break;
                     case 1:
-                        //Criminal
+                        //Thief
                         switch (chatIndex)
                         {
                             case 0:
@@ -179,45 +172,22 @@ public class ChatScript : MonoBehaviour
                                 StartCoroutine(waitandspawnself);
                                 break;
                             case 1:
-                                chatText.text = "Says here you were a criminal. Care to explain?";
+                                chatText.text = "It says here you were a thief.  What type of thief were you?";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
                             case 2:
-                                chatText.text = "I knew this would come up. I had no choice.";
-                                StartCoroutine(waitandspawnsubject);
+                                chatText.text = "I stole from other thiefs.  I considered myself somewhat of a vigilante.";
+                                StartCoroutine(waitandspawnself);
                                 break;
                             case 3:
-                                chatText.text = "I had no family or support system, and had to rob stores and people to stay afloat.";
-                                StartCoroutine(waitandspawnself);
+                                chatText.text = "So you only stole from others who stole?";
+                                StartCoroutine(waitandspawnsubject);
                                 break;
                             case 4:
-                                chatText.text = "Did you really not have a choice? Couldn't you have found work?";
-                                StartCoroutine(waitandspawnsubject);
+                                chatText.text = "Exactly. I never stole from people who were innocent.";
+                                //StartCoroutine(waitandspawnsubject);
                                 break;
-                            case 5:
-                                chatText.text = "Found work? Where? Getting minimal pay doing menial labor?";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 6:
-                                chatText.text = "I got good enough at robbing that I almost started to make a life for myself.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 7:
-                                chatText.text = "But what about the people that you robbed?";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 8:
-                                chatText.text = "I guess they were at the wrong place at the wrong time.";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 9:
-                                chatText.text = "I never hurt anyone, and even after doing it for so long, it pained me to take from others.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 10:
-                                chatText.text = "Very well, I think I've heard enough about this. Thank you.";
-                                //StartCoroutine(waitandspawnself);
-                                break;
+                            
                         }
                         break;
                     case 2:
@@ -304,7 +274,7 @@ public class ChatScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        //Traveler
+                        //Dad
                         switch (chatIndex)
                         {
                             case 0:
@@ -312,45 +282,26 @@ public class ChatScript : MonoBehaviour
                                 StartCoroutine(waitandspawnself);
                                 break;
                             case 1:
-                                chatText.text = "So you were a traveler. Tell me about your travels";
+                                chatText.text = "Looks like being a father was a large part of your life.";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
                             case 2:
-                                chatText.text = "Ah yes. I am so glad I traveled enough to earn that tag. Traveling defined me. I had this urge to travel.";
-                                StartCoroutine(waitandspawnsubject);
+                                chatText.text = "It was. I had 3 sons, two of which I coached into pro baseball.";
+                                StartCoroutine(waitandspawnself);
                                 break;
                             case 3:
-                                chatText.text = "I needed to see things and meet different people. I visited every continent on earth in my time, even Antartica.";
-                                StartCoroutine(waitandspawnself);
+                                chatText.text = "What about the third one?";
+                                StartCoroutine(waitandspawnsubject);
                                 break;
                             case 4:
-                                chatText.text = "How did you make a living if you were always traveling?";
-                                StartCoroutine(waitandspawnsubject);
+                                chatText.text = "Never really liked him to be honest.";
+                                //StartCoroutine(waitandspawnsubject);
                                 break;
-                            case 5:
-                                chatText.text = "I had a YouTube channel where I documented my travels.";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 6:
-                                chatText.text = "It was very successful and provided for me even after I quit making videos.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 7:
-                                chatText.text = "What a life you had. You should consider yourself lucky.";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 8:
-                                chatText.text = "Indeed I was.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 9:
-                                chatText.text = "That's all for this section, thanks for chatting.";
-                                //StartCoroutine(waitandspawnself);
-                                break;
+                            
                         }
                         break;
                     case 1:
-                        //Ceo
+                        //Salesman
                         switch (chatIndex)
                         {
                             case 0:
@@ -358,33 +309,18 @@ public class ChatScript : MonoBehaviour
                                 StartCoroutine(waitandspawnself);
                                 break;
                             case 1:
-                                chatText.text = "Looks like you were a CEO! A successful life, I presume.";
+                                chatText.text = "So, you were a salesman? What goods did you sell?";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
                             case 2:
-                                chatText.text = "You could say that. I founded a small business that brought virtual education to students who could not commute to school easily.";
+                                chatText.text = "I sold knives to my close friends and family, and got a cut based on how many sales people I referred made!";
                                 StartCoroutine(waitandspawnself);
                                 break;
                             case 3:
-                                chatText.text = "Wow! That sounds like a great company to be CEO of.";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 4:
-                                chatText.text = "It was. I started the company when I was 26, and stuck with it until I retired at 62.";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 5:
-                                chatText.text = "It was rewarding to see my business boom to the size it did.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 6:
-                                chatText.text = "An honorable company led by, from what I can tell, an honorable person.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 7:
-                                chatText.text = "Thanks for the info here.";
+                                chatText.text = "Like a pyramid scheme?";
                                 //StartCoroutine(waitandspawnsubject);
                                 break;
+                            
                         }
                         break;
                     case 2:
@@ -474,26 +410,29 @@ public class ChatScript : MonoBehaviour
                         }
                         break;
                     case 6:
-                        //Graduate
+                        //Lawyer
                         switch (chatIndex)
                         {
                             case 0:
-                                chatText.text = "I feel like im educated";
+                                chatText.text = "Is this legal?";
                                 StartCoroutine(waitandspawnself);
 
                                 break;
                             case 1:
-                                chatText.text = "Yeah I would say so.";
+                                chatText.text = "My files say that you were a lawyer. Can you give me some specifics?.";
                                 StartCoroutine(waitandspawnsubject);
 
                                 break;
                             case 2:
-                                chatText.text = "Highschool was so easy.";
+                                chatText.text = "Sure, I was a personal injury lawyer!  I’m the guy who makes YOU money if there’s no wet floor sign!";
                                 StartCoroutine(waitandspawnself);
                                 break;
                             case 3:
-                                chatText.text = "Oh okay";
-
+                                chatText.text = "I see. Was this the only line of work you did?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 4:
+                                chatText.text = "Sure was! Even made enough to get my face up on a couple billboards too";
                                 break;
                         }
                         break;
@@ -576,7 +515,7 @@ public class ChatScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        //Couch potato
+                        //Lawyer
                         switch (chatIndex)
                         {
                             case 0:
@@ -584,107 +523,49 @@ public class ChatScript : MonoBehaviour
                                 StartCoroutine(waitandspawnself);
                                 break;
                             case 1:
-                                chatText.text = "So you were a couch potato. What does that say about you?";
+                                chatText.text = "Looks like we have a lawyer here. Can you tell me what types of cases you worked with?";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
                             case 2:
-                                chatText.text = "Yea I guess looking back I kind of was a bit of a couch potato.";
-                                StartCoroutine(waitandspawnsubject);
+                                chatText.text = "I was a traffic ticket lawyer.  My job was to help my clients lower their fines on traffic violations";
+                                StartCoroutine(waitandspawnself);
                                 break;
                             case 3:
-                                chatText.text = "I was born well off and had funds for my whole life with minimal work.";
+                                chatText.text = "So you made people pay less for speeding tickets and such?";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
                             case 4:
-                                chatText.text = "What a life, man.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 5:
-                                chatText.text = "Did you do anything at all to better the world around you?";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 6:
-                                chatText.text = "I, uh... I guess I helped my mom bring the groceries in sometimes.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 7:
-                                chatText.text = "Wow, what a hero you were. I bet those groceries were so heavy.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 8:
-                                chatText.text = "Did you ever have a job, or a family?";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 9:
-                                chatText.text = "Nah, I kinda just stuck to myself and chilled my whole life.";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 10:
-                                chatText.text = "I kind of lived the dream to be honest.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 11:
-                                chatText.text = "So no goals? No ambitions?";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 12:
-                                chatText.text = "My only goal was to chill. I met that goal.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 13:
-                                chatText.text = "Well that sounds great. Thanks for the info, Mr. Potato.";
+                                chatText.text = "Exactly. I was a bit of a hero if I do say so myself.";
                                 //StartCoroutine(waitandspawnself);
                                 break;
+                           
                         }
                         break;
                     case 1:
-                        //Cheater
+                        //Magician
                         switch (chatIndex)
                         {
                             case 0:
-                                chatText.text = "Hey there..";
+                                chatText.text = "Wanna see a trick?";
                                 StartCoroutine(waitandspawnself);
                                 break;
                             case 1:
-                                chatText.text = "I'm told you were a cheater in life. What made you a cheater?";
+                                chatText.text = "A magician! How cool.";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
                             case 2:
-                                chatText.text = "I cheated on my wife.";
+                                chatText.text = "Without my deck of cards I am nothing.  I feel naked.";
                                 StartCoroutine(waitandspawnself);
                                 break;
                             case 3:
-                                chatText.text = "And how did that make you feel?";
+                                chatText.text = "I am so sorry but the SPC can not provide cards to magicians due to company policy. ";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
                             case 4:
-                                chatText.text = "In the moment, it was like I was blacked out. Things jut happened so quickly.";
+                                chatText.text = "That’s ok, I made enough people happy with my tricks during my life.  I am satisfied.";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
-                            case 5:
-                                chatText.text = "Then, on my way home, these deep feelings of regret and pain hit me.";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 6:
-                                chatText.text = "I knew what I'd done was so horribly wrong.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 7:
-                                chatText.text = "So you regret your actions?";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 8:
-                                chatText.text = "Tremendously. I ruined my kids lives by separating their parents, ";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 9:
-                                chatText.text = "It still haunts me even in death.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 10:
-                                chatText.text = "I understand. Thank you for talking about this.";
-                                //StartCoroutine(waitandspawnself);
-                                break;
+                            
                             
                         }
                         break;
@@ -761,15 +642,15 @@ public class ChatScript : MonoBehaviour
 
                                 break;
                             case 1:
-                                chatText.text = "We aren't allowed to smoke in here are we?  Not that I have one.";
+                                chatText.text = "Wow, so you smoked so much weed that ⅓ of your entire profile is dedicated to being a stoner.";
                                 StartCoroutine(waitandspawnsubject);
 
                                 break;
                             case 2:
-                                chatText.text = "Its all good.";
-                                //StartCoroutine(waitandspawnself);
-
+                                chatText.text = "Oh dang that’s crazy.";
+                                StartCoroutine(waitandspawnself);
                                 break;
+
                         }
                         break;
                     case 6:
@@ -907,12 +788,60 @@ public class ChatScript : MonoBehaviour
                         chatText.text = "Hello, how are you?";
                         break;
                     case 7:
-                        //FILLER
-                        chatText.text = "FILLER";
+                        //Gamer
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "This game is easy!";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 1:
+                                chatText.text = "Hello gamer. What games did you play?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 2:
+                                chatText.text = "I was a pro Call of Duty player when I was young. You don’t keep reflexes like that forever, so my career didn’t last too long.";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "Were you successful?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 4:
+                                chatText.text = "I got 13 viewers on twitch once, so yea I’d consider myself a bit of a household name in gaming";
+                                //StartCoroutine(waitandspawnsubject);
+                                break;
+
+
+                        }
                         break;
                     case 8:
-                        //FILLER
-                        chatText.text = "FILLER";
+                        //Mother
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "Hey hun.";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 1:
+                                chatText.text = "Always good to see someone who was such a good mother it became one of their tags";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 2:
+                                chatText.text = "Wow, that is great news! I loved my kids with all my heart, and gave them the world. ";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "How nice. Your kids must have loved you dearly.";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 4:
+                                chatText.text = "They did, I got so lucky with them! ";
+                                //StartCoroutine(waitandspawnsubject);
+                                break;
+
+
+                        }
                         break;
                     case 9:
                         //FILLER
@@ -942,7 +871,7 @@ public class ChatScript : MonoBehaviour
 
                     break;
                     case 4:
-                        //Cheater
+                        //Cult Leader
                         switch (chatIndex)
                         {
                             case 0:
@@ -950,84 +879,112 @@ public class ChatScript : MonoBehaviour
                                 StartCoroutine(waitandspawnself);
                                 break;
                             case 1:
-                                chatText.text = "So you were a cheater? What type of cheating did you do?";
+                                chatText.text = "Now I don’t see this every day… a cult leader! What cult did you lead?";
                                 StartCoroutine(waitandspawnsubject);
                                 break;
                             case 2:
-                                chatText.text = "Ahahaha. I guess this is about my school days.";
-                                StartCoroutine(waitandspawnsubject);
+                                chatText.text = "I led the knights of the sacred tomb";
+                                StartCoroutine(waitandspawnself);
                                 break;
                             case 3:
-                                chatText.text = "You see, I was a bit of a serial cheater in school.";
-                                StartCoroutine(waitandspawnself);
+                                chatText.text = "And what type of cult activities did the knights of the sacred tomb participate in?";
+                                StartCoroutine(waitandspawnsubject);
                                 break;
                             case 4:
-                                chatText.text = "Serial cheater? How so?";
-                                StartCoroutine(waitandspawnsubject);
+                                chatText.text = "We worshipped the sacred tomb for 12 hours per day.  ";
+                                //StartCoroutine(waitandspawnsubject);
                                 break;
-                            case 5:
-                                chatText.text = "It was almost a personal goal of mine to cheat as hard as I possibly could on anything.";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 6:
-                                chatText.text = "Tests, essays, you name it, I cheated!";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 7:
-                                chatText.text = "Why did you cheat so hard?";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 8:
-                                chatText.text = "You know, that's a great question.";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 9:
-                                chatText.text = "I've never had to answer it because I never got caught.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 10:
-                                chatText.text = "You must have had some talent.";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 11:
-                                chatText.text = "Practice makes perfect.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 12:
-                                chatText.text = "What about your adult life? Did the cheating continue into it?";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 13:
-                                chatText.text = "Kind of. I guess I shifted from cheating to cutting corners. Still, I think I did ok. ";
-                                StartCoroutine(waitandspawnsubject);
-                                break;
-                            case 14:
-                                chatText.text = "I never cheated on anyone, just on assignments and stuff.";
-                                StartCoroutine(waitandspawnself);
-                                break;
-                            case 15:
-                                chatText.text = "Ok, I understand. Thanks for the info.";
-                                //StartCoroutine(waitandspawnself);
-                                break;
+                            
 
                         }
                         break;
                     case 5:
-                        //Enemy
-                        chatText.text = "You again?!";
-                    break;
+                        //CEO
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "I'm the boss.";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 1:
+                                chatText.text = "Looks like we got a CEO here. What company did you work for?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 2:
+                                chatText.text = "I worked for a company that delivered empty boxes to warehouses.";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "Empty boxes? Who needs those?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 4:
+                                chatText.text = "Great question. All I knew was that I got paid millions and the workers made minimum wage!";
+                                //StartCoroutine(waitandspawnsubject);
+                                break;
+
+
+                        }
+                        break;
                     case 6:
-                        //Stranger
-                        chatText.text = "Who are you?";
-                    break;
+                        //Angry
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = ">:(";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 1:
+                                chatText.text = "I’m sorry to ask, but when an entire tag is “angry,” I have to know more.";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 2:
+                                chatText.text = "I JUST WANT TO BE ALIVE AGAIN. WHY DID I DIE. SO STUPID.";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "Ok, the tag system definitely still works. Anything else you care to share?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 4:
+                                chatText.text = "THIS PLACE IS SO GLOOMY. ADD SOME DAMN COLOR.";
+                                //StartCoroutine(waitandspawnsubject);
+                                break;
+
+
+                        }
+                        break;
                     case 7:
                         //Unknown
                         chatText.text = "???";
                     break;
                     case 8:
-                        //Beared
-                        chatText.text = "Check this scruff!";
-                    break;
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "What should I draw?";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 1:
+                                chatText.text = "Looks like we have a creative soul here. What type of art did you make?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 2:
+                                chatText.text = "All types of art.  It was my language.  What I couldn’t communicate with words, I communicated with my art.";
+                                StartCoroutine(waitandspawnself);
+                                break;
+                            case 3:
+                                chatText.text = "What was your favorite piece?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 4:
+                                chatText.text = "I didn’t have a favorite. They all spoke to me in different, unique ways and I can’t pick one.";
+                                //StartCoroutine(waitandspawnsubject);
+                                break;
+
+
+                        }
+                        break;
                     case 9:
                         //Quiet
                         chatText.text = "...";
@@ -1071,27 +1028,57 @@ public class ChatScript : MonoBehaviour
                         chatText.text = "I haven't changed my mind since that day.";
                         break;
                     case 7:
-                        //Unwavering
-                        chatText.text = "I will never change!";
-                        break;
-                    case 8:
-                        //Revolutionary option 1
                         switch (chatIndex)
                         {
                             case 0:
-                                chatText.text = "Death to the oppressor!";
+                                chatText.text = "Hello, do you need help?";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "So you lived a life of giving. Can you give me some details?";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = " Of course. I was very fortunate to start a company and get lots of money at a young age.";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 3:
+                                chatText.text = "So instead of keeping money you didn’t need you gave it away?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 4:
+                                chatText.text = "Exactly. I didn’t need yachts or private jets, I just needed my family, and money can’t buy that.";
+                                break;
+                        }
+                        break;
+                    case 8:
+                        //Teacher
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "Did you do your hw?";
                                 StartCoroutine(waitandspawnself);
                                
                                 break;
                             case 1:
-                                chatText.text = "What is that supposed to mean?";
+                                chatText.text = "Lovely to see an educator coming through. How was your teaching career?";
                                 StartCoroutine(waitandspawnsubject);
                                 
                                 break;
                             case 2:
-                                chatText.text = "I don't know I saw a reddit post.";
-                                //StartCoroutine(waitandspawnself);
+                                chatText.text = "It was lovely.  Ever since I was a child, I knew it was my destiny to teach.";
+                                StartCoroutine(waitandspawnself);
                                
+                                break;
+                            case 3:
+                                chatText.text = "What type of teaching did you do?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 4:
+                                chatText.text = "I taught elementary school. I believed that if I could shape the youth, the world could be a better place.";
                                 break;
                         }
                         //Revolutionary option 2
@@ -1136,7 +1123,31 @@ public class ChatScript : MonoBehaviour
                         break;
                     case 7:
                         //Unfair Boss
-                        chatText.text = "Stupid little people don't know their place.";
+                        switch (chatIndex)
+                        {
+                            case 0:
+                                chatText.text = "Did you do your hw?";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 1:
+                                chatText.text = "Hello! It says here you were a teacher. Care to elaborate?";
+                                StartCoroutine(waitandspawnsubject);
+
+                                break;
+                            case 2:
+                                chatText.text = "I was a teacher.  It was the first job I got out of college and I rode it out my entire career..";
+                                StartCoroutine(waitandspawnself);
+
+                                break;
+                            case 3:
+                                chatText.text = "So you spent your entire career as a teacher?";
+                                StartCoroutine(waitandspawnsubject);
+                                break;
+                            case 4:
+                                chatText.text = "Yes. I always wanted to do something else, but watching kids suffer through weekend homework never got old.";
+                                break;
+                        }
                         break;
                     case 8:
                         //Propoganda Spreader

@@ -77,8 +77,8 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Altruist");
-                        Addpoint(1);
+                        tag.SetText("Inventor");
+                        Addpoint(4);
                         break;
                     case 1:
                         tag.SetText("Generous");
@@ -102,7 +102,7 @@ public class TagScript : MonoBehaviour
                         break;
                     case 6:
                         tag.SetText("Teacher");
-                        Addpoint(2);
+                        Addpoint(5);
                         break;
                     case 7:
                         tag.SetText("Donater");
@@ -130,8 +130,8 @@ public class TagScript : MonoBehaviour
                         Losepoint(2);
                         break;
                     case 1:
-                        tag.SetText("Criminal");
-                        Losepoint(5);
+                        tag.SetText("Thief");
+                        Losepoint(2);
                         break;
                     case 2:
                         tag.SetText("Murderer");
@@ -177,11 +177,11 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Traveler");
+                        tag.SetText("Dad");
                         Addpoint(2);
                         break;
                     case 1:
-                        tag.SetText("CEO");
+                        tag.SetText("Salesman");
                         Addpoint(1);
                         break;
                     case 2:
@@ -201,8 +201,8 @@ public class TagScript : MonoBehaviour
                         Addpoint(2);
                         break;
                     case 6:
-                        tag.SetText("Graduate");
-                        Addpoint(2);
+                        tag.SetText("Lawyer");
+                        Addpoint(3);
                         break;
                     case 7:
                         tag.SetText("Executive");
@@ -224,12 +224,12 @@ public class TagScript : MonoBehaviour
                 switch (randomText)
                 {
                     case 0:
-                        tag.SetText("Coach Potato");
+                        tag.SetText("Lawyer");
                         Losepoint(1);
                         break;
                     case 1:
-                        tag.SetText("Cheater");
-                        Losepoint(3);
+                        tag.SetText("Magician");
+                        Addpoint(2);
                         break;
                     case 2:
                         tag.SetText("Single");
@@ -245,7 +245,7 @@ public class TagScript : MonoBehaviour
                         break;
                     case 5:
                         tag.SetText("Stoner");
-                        Losepoint(1);
+                        Losepoint(2);
                         break;
                     case 6:
                         tag.SetText("Scammer");
@@ -302,12 +302,12 @@ public class TagScript : MonoBehaviour
                         Addpoint(5);
                         break;
                     case 7:
-                        tag.SetText("FILLER");
-                        Addpoint(1);
+                        tag.SetText("Gamer");
+                        Addpoint(2);
                         break;
                     case 8:
-                        tag.SetText("FILLER");
-                        Addpoint(1);
+                        tag.SetText("Mother");
+                        Addpoint(5);
                         break;
                     case 9:
                         tag.SetText("FILLER");
@@ -337,12 +337,12 @@ public class TagScript : MonoBehaviour
                         Losepoint(4);
                         break;
                     case 4:
-                        tag.SetText("Cheater");
-                        Losepoint(4);
+                        tag.SetText("Cult Leader");
+                        Losepoint(3);
                         break;
                     case 5:
-                        tag.SetText("Enemy");
-                        Losepoint(5);
+                        tag.SetText("CEO");
+                        Losepoint(3);
                         break;
                     case 6:
                         tag.SetText("Stranger");
@@ -353,8 +353,8 @@ public class TagScript : MonoBehaviour
                         Losepoint(2);
                         break;
                     case 8:
-                        tag.SetText("Bearded");
-                        Addpoint(1);
+                        tag.SetText("Artist");
+                        Addpoint(4);
                         break;
                     case 9:
                         tag.SetText("Quiet");
@@ -399,11 +399,11 @@ public class TagScript : MonoBehaviour
                         Addpoint(2);
                         break;
                     case 7:
-                        tag.SetText("Unwavering");
-                        Addpoint(3);
+                        tag.SetText("Philanthropist");
+                        Addpoint(5);
                         break;
                     case 8:
-                        tag.SetText("Revolutionary");
+                        tag.SetText("Teacher");
                         Addpoint(5);
                         break;
                     case 9:
@@ -439,7 +439,7 @@ public class TagScript : MonoBehaviour
                         tag.SetText("Nepotist");
                         break;
                     case 7:
-                        tag.SetText("Unfair boss");
+                        tag.SetText("Teacher");
                         break;
                     case 8:
                         tag.SetText("Propogandor");
