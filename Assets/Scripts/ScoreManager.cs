@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    int currentRound;
-    float currentScore;
+    float currentRound;
+    public float currentScore;
     public float score;
 
-    private State state;
+    //private State state;
     private UIManager uiManagerScript;
     private GameObject character;
     private CharacterScript charscript;
@@ -23,13 +23,14 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        currentScore = State.score/100;
-        currentRound = 1;  //BROKEN, NEEDS FIX
+        //currentScore = State.score/100;
+        //currentRound = 1;  //BROKEN, NEEDS FIX
     }
     // Update is called once per frame
     void Update()
     {
-
+        currentScore = State.score;
+        currentRound = State.round;
         //State.score = score;
         character = GameObject.FindWithTag("Character");
         charscript = character.GetComponent<CharacterScript>();
@@ -42,8 +43,8 @@ public class ScoreManager : MonoBehaviour
 
         totalValue = m + a + i + l;
 
-        Debug.Log("Current Score" + (currentScore / currentRound)*100 + "%");
-        score = (currentScore / currentRound) * 100;
+        score = (currentScore / currentRound)*100;
+        Debug.Log("Score" + score);
 
 
         if(score >= 90)
@@ -100,10 +101,12 @@ public class ScoreManager : MonoBehaviour
 
     public void AddA()//Ascended
     {
-        currentRound++;
+        currentRound+= 1f;
+        State.round = currentRound;
         if(totalValue >= 20)
         {
-            currentScore++;
+            currentScore+=1f;
+            State.score = currentScore;
         }
         
         
@@ -111,10 +114,12 @@ public class ScoreManager : MonoBehaviour
 
     public void AddB()//Descended
     {
-        currentRound++;
+        currentRound+= 1f;
+        State.round = currentRound;
         if (totalValue <= 20)
         {
-            currentScore++;
+            currentScore+=1f;
+            State.score = currentScore;
         }
     }
 }

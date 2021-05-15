@@ -1384,7 +1384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740922951}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 203.90625, y: 207.8125, z: -0.22583008}
+  m_LocalPosition: {x: 172, y: 158.78, z: -0.22583008}
   m_LocalScale: {x: 0.78125, y: 0.78125, z: 0.78125}
   m_Children: []
   m_Father: {fileID: 1067736741}
@@ -1782,7 +1782,7 @@ MonoBehaviour:
   direction: {x: 5, y: 0, z: 0}
   bossoffset: {x: -3, y: 1.2, z: 0}
   speed: 0.004
-  offset: {x: 0, y: 0.5, z: 0}
+  offset: {x: 0.5, y: 0.5, z: 0}
 --- !u!4 &2109798034
 Transform:
   m_ObjectHideFlags: 0

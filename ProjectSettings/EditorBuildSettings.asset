@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NewNight.unity
     guid: b6703b4b910e54e4f82ea531e0338cbb
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 27082ca311b0dd7429cbc9fefc42f0df
   m_configObjects: {}

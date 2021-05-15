@@ -67,13 +67,13 @@ public class CameraSwipe : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown("space") && timer >200)
+        if (Input.GetKeyDown("space") && timer >500)
         {
             ChoseAscend();
             timer = 0;
 
         }
-        else if (Input.GetKeyDown("delete") && timer > 200)
+        else if (Input.GetKeyDown("delete") && timer > 500)
         {
             ChoseReincarnate();
             timer = 0;

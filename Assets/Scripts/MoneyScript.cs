@@ -18,7 +18,8 @@ public class MoneyScript : MonoBehaviour
    
     void Update()
     {
-        cashText.text = ""+Cash;
+        Cash = State.cash;
+        cashText.text = ""+State.cash;
 
     }
 }

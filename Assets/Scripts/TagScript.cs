@@ -478,6 +478,7 @@ public class TagScript : MonoBehaviour
         {
             GameObject bubble = (GameObject)Instantiate(chatPrefab, chatSpawn.transform.position, transform.rotation);
             bubble.transform.parent = overlay.transform;
+            bubble.transform.localScale = new Vector3(0.035f, 0.02f, 1);
             ChatScript cs = bubble.GetComponent<ChatScript>();
             cs.WriteBubble(random, randomText, moral, integrity, loyalty, actualization, 0);
             chatClicks++;

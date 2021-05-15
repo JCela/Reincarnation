@@ -9,8 +9,8 @@ public class CharacterManager : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 thrust;
     public Tasks taskScript;
-    
-    
+
+    public bool isNight;
 
     private IEnumerator killcoroutine;
     private IEnumerator addnewcharacter;
@@ -31,30 +31,23 @@ public class CharacterManager : MonoBehaviour
     private TagScript tag2script;
     private TagScript tag3script;
 
+    public Animator ScanAnimator;
     public Animator HoleAnimator;
     public Animator hookAnimator;
     private Animator playerAnimator;
     public Transform startMarker;
     public Transform endMarker;
+
     void Start()
     {
         thrust = new Vector2(1, 0);
-        //character = GameObject.FindWithTag("Character");
         uiManagerScript = this.GetComponent<UIManager>();
-       // tag1 = character.transform.GetChild(0).gameObject;
-       // tag2 = character.transform.GetChild(1).gameObject;
-       // tag3 = character.transform.GetChild(2).gameObject;
-
-       // tag1script = tag1.GetComponent<TagScript>();
-       // tag2script = tag2.GetComponent<TagScript>();
-       // tag3script = tag3.GetComponent<TagScript>();
-        
-
-
     }
      
     void Update()
     {
+        
+
         character = GameObject.FindWithTag("Character");
         tag1 = character.transform.GetChild(0).gameObject;
         tag2 = character.transform.GetChild(1).gameObject;
@@ -73,13 +66,13 @@ public class CharacterManager : MonoBehaviour
         
 
         soulPoints = tag1script.currentPoints + tag2script.currentPoints + tag3script.currentPoints;
-        Debug.Log("This souls value in points is: " + soulPoints);
+        //Debug.Log("This souls value in points is: " + soulPoints);
         playerAnimator = character.GetComponent<Animator>();
     }
 
     public void SwipeCharacterRight()
     {
-        Debug.Log("Player has chosen to send character to Ascend.");
+        //Debug.Log("Player has chosen to send character to Ascend.");
         //hookAnimator.SetTrigger("clawGrab");
         playerAnimator.SetTrigger("Ascended");
         taskScript.Ascended++;
@@ -89,9 +82,9 @@ public class CharacterManager : MonoBehaviour
 
     public void SwipeCharacterLeft()
     {
-        Debug.Log("Player has chosen to send character to Reincarnate.");
+        //Debug.Log("Player has chosen to send character to Reincarnate.");
         taskScript.Descended++;
-        //rb.AddForce(-thrust, ForceMode2D.Impulse);
+        
         HoleAnimator.SetTrigger("isFaded");
         playerAnimator.SetTrigger("Faded");
         StartCoroutine(killcoroutine);
@@ -101,10 +94,8 @@ public class CharacterManager : MonoBehaviour
     private IEnumerator PushUp(float waitTime)
     {
         hookAnimator.SetTrigger("clawGrab");
-        
         yield return new WaitForSeconds(waitTime);
         hookAnimator.ResetTrigger("clawGrab");
-        //rb.AddForce(thrust, ForceMode2D.Impulse);
         yield return new WaitForSeconds(1.0f);
         
         StartCoroutine(killcoroutine);
@@ -116,7 +107,6 @@ public class CharacterManager : MonoBehaviour
         
         yield return new WaitForSeconds(waitTime);
         //Kill current character
-        //playerAnimator.SetTrigger("Fade");
         Destroy(character);
         StopCoroutine(killcoroutine);
     }
@@ -125,9 +115,12 @@ public class CharacterManager : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         //Add a new character
-        HoleAnimator.ResetTrigger("isFaded");
+        //HoleAnimator.ResetTrigger("isFaded");
         Instantiate(charPrefab, new Vector3(-1, characterHeight, -1), Quaternion.identity);
         //StartCoroutine(lerpPlayer);
+        yield return new WaitForSeconds(waitTime);
+        HoleAnimator.ResetTrigger("isFaded");
+        ScanAnimator.SetTrigger("newChar");
         StopCoroutine(addnewcharacter);
     }
 

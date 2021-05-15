@@ -17,6 +17,9 @@ TagManager:
   - Noti2
   - Noti1
   - Noti5
+  - Journal
+  - Noti4
+  - JournalText
   layers:
   - Default
   - TransparentFX

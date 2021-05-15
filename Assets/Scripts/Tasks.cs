@@ -13,9 +13,10 @@ public class Tasks : MonoBehaviour
     private MoneyScript money;
     private GameObject manager;
     private UIManager uiManagerScript;
-
+    private GameObject character;
     private IEnumerator scene2;
     private IEnumerator scene3;
+    private IEnumerator scene4;
     public int Ascended = 0;
     public int Descended = 0;
 
@@ -31,6 +32,7 @@ public class Tasks : MonoBehaviour
         }
         scene2 = NextScene(2);
         scene3 = NextScene(1);
+        scene4 = NextScene(3);
         manager = GameObject.FindWithTag("Manager");
         money = manager.GetComponent<MoneyScript>();
         uiManagerScript = manager.GetComponent<UIManager>();
@@ -39,9 +41,16 @@ public class Tasks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(State.isCashOn == true)
+        {
+            money.cashSign.gameObject.SetActive(true);
+            money.cashText.gameObject.SetActive(true);
+        }
+        character = GameObject.FindWithTag("Character");
+        //JContainer = GameObject.FindWithTag("Journal");
         //KEEP TRACK OF STATS
-        
-       
+
+
         switch (currentTask)
         {
             case 0:
@@ -72,14 +81,14 @@ public class Tasks : MonoBehaviour
                 }
                 break;
             case 2:
-                Tasktext.text = "I'm letting you know now, we will be carefully monitoring your decisions.  Whether or not you sent the soul to the appropriate place will determine the grade seen on your desk! Now try sending 2 souls to ascend [SPACE]";
+                Tasktext.text = "We will be watching your decisions.  Whether or not you sent the soul to the appropriate place will determine the grade seen on your desk! Now try sending 2 souls to ascend [SPACE]";
                 // money.cashSign.gameObject.SetActive(true);
                 // money.cashText.gameObject.SetActive(true);
                 uiManagerScript.Grade.gameObject.SetActive(true);
 
                 if (Ascended >= 1)
                 {
-                    Tasktext.text = "I'm letting you know now, we will be carefully monitoring your decisions.  Whether or not you sent the soul to the appropriate place will determine the grade seen on your desk! Now try sending 1 soul to ascend [SPACE]";
+                    Tasktext.text = "We will be watching your decisions.  Whether or not you sent the soul to the appropriate place will determine the grade seen on your desk! Now try sending 1 soul to ascend [SPACE]";
                     if (Ascended >= 2)
                     {
                         money.Cash += 300;
@@ -89,7 +98,7 @@ public class Tasks : MonoBehaviour
                 }
                 break;
             case 3:
-                Tasktext.text = "You can click on the computer to see more about the soul!   Click the computer and click the buttons with notifications, then press [SPACE] or [DEL] to let me know you are ready to begin official business!";
+                Tasktext.text = "You can click on the icons to see more about the soul!   Click the computer and click the buttons with notifications, then press [SPACE] or [DEL]";
                 if(Ascended >= 1 || Descended >= 1)
                 {
                     StartCoroutine(scene2);
@@ -97,20 +106,81 @@ public class Tasks : MonoBehaviour
                 //StartCoroutine(scene3);   
                 break;
             case 4:
-                Tasktext.text = "Now that it's night, you can click the computer to look at the shop or view your journal!  Press either [SPACE] or [DEL] to go to the next day.";
+                State.Entry = 0;
+                Tasktext.text = "Now that it's night, you can click the computer to look at the shop or view your journal!  Press either [SPACE] or [DEL] when ready to go to the next day.";
                 if(Ascended > 0 || Descended > 0)
                 {
                     State.currentTask = 5;
                     currentTask = 5;
                     State.Day = 2;
                     StartCoroutine(scene3);
+                    Reset();
                 }
                 
                 break;
             case 5:
                 Tasktext.text = "Now that you are ready for the job, it is time to get sorting!  Do your best, no pressure!";
                 uiManagerScript.Grade.gameObject.SetActive(true);
+                if(Ascended > 2 || Descended > 2)
+                {
+                    currentTask = 6;
+                    Reset();
+                }
                 break;
+            case 6:
+                Tasktext.text = "Hmmm you look suprised to see this one, hurry up and finish sorting before it gets dark!";
+                character.GetComponent<SpriteRenderer>().color = Color.red;
+                if (Ascended > 0 || Descended > 0)
+                {
+                    State.currentTask = 7;
+                    currentTask = 7;
+                    StartCoroutine(scene2);
+                    Reset();
+                }
+                break;
+            case 7:
+                State.Entry = 1;
+                Tasktext.text = "Don't stay up all night writing OK?  You've got a lot of sorting to do, plus tomorrow is pay day!";
+                if (Ascended > 0 || Descended > 0)
+                {
+                    State.currentTask = 8;
+                    currentTask = 8;
+                    State.Day = 2;
+                    StartCoroutine(scene3);
+                    Reset();
+                }
+                break;
+            case 8:
+                Tasktext.text = "Today is a quick day!  Only one soul came through that needs to be sorted.";
+                if (Ascended > 0 || Descended > 0)
+                {
+                    StartCoroutine(scene2);
+                    State.currentTask = 9;
+                    currentTask = 9;
+                    Reset();
+                }
+                break;
+            case 9:
+                Tasktext.text = "I deposited some money into your computer, you should be able to buy some upgrades now to help you sort more efficiently! Also, I noticed you looking all glum earlier today, keep your head up!  This'll all be over soon.";
+                State.cash =300;
+                State.Entry = 2;
+                State.isCashOn = true;
+                if (Ascended > 0 || Descended > 0)
+                {
+                    State.currentTask = 10;
+                    currentTask = 10;
+                    StartCoroutine(scene3);
+                    Reset();
+                }   
+                break;
+            case 10:
+                Tasktext.text = "Now Rhett, I know you would never hurt anyone NOW after dieing... right?";
+                if(Ascended > 1 || Descended > 1)
+                {
+                    StartCoroutine(scene4);
+                }
+                break;
+
 
         }
     }
@@ -144,7 +214,7 @@ public class Tasks : MonoBehaviour
         //blackScreen.SetActive(true);
         //yield return new WaitForSeconds(600000f*Time.deltaTime);
         //blackScreen.SetActive(true);
-        State.score = manager.GetComponent<ScoreManager>().score;
+        State.score = manager.GetComponent<ScoreManager>().currentScore;
         Debug.Log(State.score);
         yield return new WaitForSeconds(3f);
         

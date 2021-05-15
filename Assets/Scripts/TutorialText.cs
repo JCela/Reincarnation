@@ -330,7 +330,7 @@ public class TutorialText : MonoBehaviour
 
     void MakeTextOfficer()
     {
-        activeDialogue.color = new Color(1, 0, 0, 100);
+        activeDialogue.color = new Color(0, 0, 0, 100);
         activeDialogue.transform.position = newTarget.transform.position;
     }
 
